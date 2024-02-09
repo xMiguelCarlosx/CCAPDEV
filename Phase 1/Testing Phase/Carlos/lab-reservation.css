@@ -1,0 +1,224 @@
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    /* Reset margin */
+    padding: 0;
+    /* Reset padding */
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+
+}
+
+.container-main-layout {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100%;
+    background-image: url(.jpg);
+    background-size: cover;
+    border-radius: 2px;
+    margin: 1px;
+
+}
+
+
+.leftside {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    height: 100%;
+    width: 50%;
+
+}
+
+.rightside {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-right: 50px;
+    height: 100%;
+    width: 50%;
+
+}
+
+.div-1 {
+    display: flex;
+    flex-direction: row;
+    height: 15%;
+    width: 100%;
+    margin-left: 5px;
+    margin-top: 10px;
+
+}
+
+.rdiv-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    height: 15%;
+    width: 100%;
+    margin-right: 50px;
+    margin-top: 10px;
+
+}
+
+.div-2 {
+    display: flex;
+    flex-direction: column;
+    height: 6.5%;
+    width: 100%;
+
+}
+
+.div-3 {
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    width: 100%;
+
+}
+
+
+.div-4 {
+    display: flex;
+    flex-direction: column;
+    height: 10%;
+    width: 100%;
+
+}
+
+.text-1 {
+    color: aliceblue;
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+.text-2 {
+    color: aliceblue;
+    font-size: 15px;
+    margin-left: 37px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.text-3 {
+    color: aliceblue;
+    font-size: 40px;
+    margin-left: 37px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    /*you may remove this since it has the same result/output*/
+    justify-content: space-between;
+    /* to put a space between the two actions-group*/
+
+}
+
+.logo-1 {
+    /*TO REMOVE THE MARGIN AND PADDING OF AN INCLINE-BLOCK*/
+    margin-top: 3px;
+}
+
+.logo-1>li {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+
+}
+
+.dlsu {
+    width: 25px;
+    height: 25px;
+    background-image: url('dlsu.png');
+    background-position: center;
+    background-size: contain;
+}
+
+
+.reg {
+    display: flex;
+    flex-direction: row;
+    /*you may remove this since it has the same result/output*/
+    justify-content: space-between;
+    /* to put a space between the two actions-group*/
+
+}
+
+
+
+.reg-1>li {
+    display: inline-block;
+    width: 215.5px;
+    height: 75.3px;
+}
+
+
+
+.reg:hover {
+    display: flex;
+    flex-direction: row;
+    /*you may remove this since it has the same result/output*/
+    justify-content: space-between;
+    /* to put a space between the two actions-group*/
+
+}
+
+
+
+.reg-1>li:hover {
+    display: inline-block;
+    width: 215.5px;
+    height: 75.3px;
+}
+
+.register {
+    width: 25px;
+    height: 25px;
+    background-image: url('REGISTER.png');
+    background-position: center;
+    background-size: contain;
+}
+
+.register:hover{
+    width: 25px;
+    height: 25px;
+    background-image: url('Hover1.png');
+    background-position: center;
+    background-size: contain;
+}
+
+
+
+
+
+.log {
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+
+
+
+.log {
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+
+
+.login {
+    display: inline-block;
+    background: url('login.png')no-repeat 0 -10px;
+	width: 509px;
+	height: 204px;
+}
