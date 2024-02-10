@@ -10,18 +10,15 @@ body {
     align-content: center;
 }
 
-
 .container-main-layout {
     display: flex;
     flex-direction: row;
     height: 49vmax;
-    width: 97vmax;
+    width: 98vmax;
     background-position: center;
     border-radius: 50px;
-    border: 10px solid black;
     margin: 5px;
 }
-
 
 .student-leftside-div {
     display: flex;
@@ -29,8 +26,6 @@ body {
     background-position: center;
     height: 99%;
     width: 60%;
-    border: 10px solid rgb(231, 231, 231);
-
 }
 
 .login-as-text {
@@ -57,7 +52,7 @@ body {
     align-self: center;
     align-items: flex-start;
     align-content: center;
-    margin-top: 100px;
+    margin-top: 60px;
     width: 60%;
     height: 10%;
     background-color: #e4e4e4;
@@ -72,7 +67,6 @@ body {
     padding: 23px;
     color: #b1b1b1;
 }
-
 
 .password-container {
     display: flex;
@@ -118,21 +112,39 @@ body {
     font-size: 30px;
     padding: 23px;
     color: #b1b1b1;
-
 }
 
-/**LOGIN RIGHSIDE DIV*/
+.login-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+    align-items: flex-start;
+    align-content: center;
+    margin-top: 30px;
+    width: 60%;
+    height: 10%;
+    background-color: #e4e4e4;
+    border-radius: 65px;
+    font-size: 16px;
+    font-style: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow: hidden;
+}
+
+.login-text {
+    font-size: 30px;
+    padding: 23px;
+    color: #b1b1b1;
+}
+
+/*------------------- STUDENT RIGHSIDE DIV-----------------------*/
 .rightside-div {
     display: flex;
     flex-direction: column;
-    height: 95%;
+    background-position: center;
+    height: 100%;
     width: 40%;
 
-    background-position: center;
-    border-radius: 50px;
-    border: 10px solid rgb(230, 0, 0);
-    background-color: #e4e4e4;
-    margin: 5px;
 }
 
 .student-image-container {
@@ -142,12 +154,49 @@ body {
     align-self: center;
     align-items: flex-start;
     align-content: center;
+    overflow: hidden;
+    font-style: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin-top: 100px;
     width: 80%;
     height: 70%;
     background-color: #e4e4e4;
     border-radius: 45px;
-    border: 10px solid black;
-    font-style: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+/*THIS IS FOR THE PAGE OF THE TECHNICIAN*/
+/*------------------- TECHNICIAN LEFTSIDE DIV-----------------------*/
+
+.technician-leftside-div {
+    display: flex;
+    flex-direction: column;
+    background-position: center;
+    height: 99%;
+    width: 60%;
+}
+
+.technician-text {
+    display: flex;
+    flex-direction: row;
+    background-position: center;
+    margin-top: -20px;
+    margin-left: 10%;
+    font-size: 90px;
+}
+
+/*------------------- TECHNICIAN RIGHTSIDE DIV-----------------------*/
+.technician-image-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+    align-items: flex-start;
+    align-content: center;
     overflow: hidden;
+    font-style: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 100px;
+    width: 80%;
+    height: 70%;
+    background-color: #e4e4e4;
+    border-radius: 45px;
 }
