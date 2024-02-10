@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+
+.container-main-layout {
+    display: flex;
+    flex-direction: row;
+    height: 49vmax;
+    width: 97vmax;
+    background-position: center;
+    border-radius: 50px;
+    border: 10px solid black;
+    margin: 5px;
+}
+
+
+.student-leftside-div {
+    display: flex;
+    flex-direction: column;
+    background-position: center;
+    height: 99%;
+    width: 60%;
+    border: 10px solid rgb(231, 231, 231);
+
+}
+
+.login-as-text {
+    display: flex;
+    flex-direction: row;
+    background-position: center;
+    margin-left: 5%;
+    font-size: 90px;
+}
+
+.student-text {
+    display: flex;
+    flex-direction: row;
+    background-position: center;
+    margin-top: -20px;
+    margin-left: 10%;
+    font-size: 90px;
+}
+
+.email-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+    align-items: flex-start;
+    align-content: center;
+    margin-top: 100px;
+    width: 60%;
+    height: 10%;
+    background-color: #e4e4e4;
+    border-radius: 65px;
+    font-size: 16px;
+    font-style: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow: hidden;
+}
+
+.email-text {
+    font-size: 30px;
+    padding: 23px;
+    color: #b1b1b1;
+}
+
+
+.password-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+    align-items: flex-start;
+    align-content: center;
+    margin-top: 30px;
+    width: 60%;
+    height: 10%;
+    background-color: #e4e4e4;
+    border-radius: 65px;
+    font-size: 16px;
+    font-style: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow: hidden;
+}
+
+.password-text {
+    font-size: 30px;
+    padding: 23px;
+    color: #b1b1b1;
+}
+
+.remember-me-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+    align-items: flex-start;
+    align-content: center;
+    margin-top: 30px;
+    width: 60%;
+    height: 10%;
+    background-color: #e4e4e4;
+    border-radius: 65px;
+    font-size: 16px;
+    font-style: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow: hidden;
+}
+
+.remember-me-text {
+    font-size: 30px;
+    padding: 23px;
+    color: #b1b1b1;
+
+}
+
+/**LOGIN RIGHSIDE DIV*/
+.rightside-div {
+    display: flex;
+    flex-direction: column;
+    height: 95%;
+    width: 40%;
+
+    background-position: center;
+    border-radius: 50px;
+    border: 10px solid black;
+    background-color: #e4e4e4;
+    margin: 5px;
+}
+
+.student-image-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+    align-items: flex-start;
+    align-content: center;
+    margin-top: 100px;
+    width: 80%;
+    height: 70%;
+    background-color: #e4e4e4;
+    border-radius: 45px;
+    border: 10px solid black;
+    font-style: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow: hidden;
+}
