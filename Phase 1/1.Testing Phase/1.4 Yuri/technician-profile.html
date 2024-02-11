@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Student Profile</title>
-    <link rel="stylesheet" type="text/css" href="student-profile.css" />
-    <meta name="Student Profile" content="Reservation information" />
+    <title>Technician Profile</title>
+    <link rel="stylesheet" type="text/css" href="technician-profile.css" />
+    <meta name="Technician Profile" content="Reservation information" />
 </head>
 <body>
     <div class = container>
         <div class="leftside">
             <div class="leftside-div-1">
                 <div class="profile">
-                    <img class="profile-pic" src="images/icon.png" />
+                    <img class="profile-pic" src="images/tech-icon.png" />
                     <div class="profile-info">
                         <div class="info-role">
-                            Student
+                            Technician
                         </div>
                         <div class="info-name">
                             Name
@@ -54,16 +54,16 @@
                     Reservation for a slot
                 </div>
                 <div class="reservation-container">
-                    <a class="reservation-button" href="#add">
-                        <img class="reserve-icon" src="images/add.png" />
+                    <a class="add-button" href="#add">
+                        <img class="add-icon" src="images/tech-add.png" />
                         <span> Add </span>
                     </a>
-                    <a class="reservation-button" href="#delete">
-                        <img class="reserve-icon" src="images/delete.png" />
+                    <a class="delete-button" href="#delete">
+                        <img class="delete-icon" src="images/tech-delete.png" />
                         <span> Delete </span>
                     </a>
-                    <a class="reservation-button" href="#edit">
-                        <img class="reserve-icon" src="images/edit.png" />
+                    <a class="edit-button" href="#edit">
+                        <img class="edit-icon" src="images/tech-edit.png" />
                         <span> Edit </span>
                     </a>
                 </div>
@@ -77,26 +77,6 @@
                 </a>
             </div>
         </div>
-
-        <!-- <script> // for on click
-            function handleButtonClick(event) {
-                document.querySelectorAll('.reservation-button, .settings-button, .logout-button').forEach(button => {
-                    button.classList.remove('clicked');
-                });
-        
-                const clickedButton = event.currentTarget;
-                clickedButton.classList.add('clicked');
-        
-                const icon = clickedButton.querySelector('.reserve-icon, ::before');
-                if (icon) {
-                    icon.classList.add('clicked');
-                }
-            }
-        
-            document.querySelectorAll('.reservation-button, .settings-button, .logout-button').forEach(button => {
-                button.addEventListener('click', handleButtonClick);
-            });
-        </script> -->
 
         <div class = rightside>
             <div class = "rightside-div-1">
