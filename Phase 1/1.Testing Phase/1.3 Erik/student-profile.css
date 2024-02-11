@@ -107,15 +107,35 @@ body {
     margin-right: 50px;
     height: 97%;
     width: 70%;
-    background-color: aquamarine;
+    background-color: white;
     border-radius: 25px;
 
+}
+
+
+
+.date{
+    margin-top: 25px;
+    margin-left: 20px;
+}
+
+input[type = "date"]{
+    background-color: #0080ff;
+    padding: 15px;
+    font-family: "Roboto Mono",monospace;
+    color: #ffffff;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    width: 150px;
+    height: 20px;
 }
 
 .rightside-div-1{
     display: flex;
     flex-direction: column;
-    height: 10%;
+    height: 15%;
     width: 100%;
     background-color: pink;
 
@@ -124,17 +144,24 @@ body {
 .rightside-div-2{
     display: flex;
     flex-direction: column;
-    height: 45%;
+    height: 85%;
     width: 100%;
-    background-color: yellow;
+    background-color: green;
+    text-align: center;
 
 }
 
-.rightside-div-3{
+.slot-availability-title{
+    color: aliceblue;
+    font-size: 50px;
+}
+
+.available-slots{
     display: flex;
     flex-direction: column;
-    height: 45%;
-    width: 100%;
-    background-color: green;
-
+    height: 85%;
+    width: 95%;
+    background-color: white;
+    margin: auto;
+    border-radius: 5px;
 }
