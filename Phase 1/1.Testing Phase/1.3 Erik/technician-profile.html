@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Technician Profile</title>
+    <link rel="stylesheet" type="text/css" href="technician-profile.css" />
+    <meta name="Technician Profile" content="Reservation information" />
+</head>
+<body>
+    <div class = container>
+        <div class="leftside">
+            <div class="leftside-div-1">
+                <div class="profile">
+                    <img class="profile-pic" src="images/tech-icon.png" />
+                    <div class="profile-info">
+                        <div class="info-role">
+                            Technician
+                        </div>
+                        <div class="info-name">
+                            Name
+                        </div>
+                    </div>
+                </div>        
+            </div> 
+            <div class = "leftside-div-2">
+                <div class="profile-description-title">
+                    Profile Description
+                    <div class="description-box">
+                        <p>
+                            bsadfjhbasdjkhfbasjkhdgbjkashdbgkjadhbgkjsdhfbgsakdjfnkjlasngjkasng
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "leftside-div-3">
+                <div class="list-of-slots-title">
+                    List of Chosen Slots
+                    <div class="slots-box">
+                        <ul>
+                            <li>slot 1</li>
+                            <li>slot 2</li>
+                            <li>slot 3</li>
+                            <li>slot 4</li>
+                            <li>slot 5</li>
+                            <li>slot 6</li>
+                            <li>slot 7</li>
+                            <li>slot 8</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class = "leftside-div-4">
+                <div class="reservation-title">
+                    Reservation for a slot
+                </div>
+                <div class="reservation-container">
+                    <a class="add-button" href="#add">
+                        <img class="add-icon" src="images/tech-add.png" />
+                        <span> Add </span>
+                    </a>
+                    <a class="delete-button" href="#delete">
+                        <img class="delete-icon" src="images/tech-delete.png" />
+                        <span> Delete </span>
+                    </a>
+                    <a class="edit-button" href="#edit">
+                        <img class="edit-icon" src="images/tech-edit.png" />
+                        <span> Edit </span>
+                    </a>
+                </div>
+            </div>
+            <div class="leftside-div-5">
+                <a class="settings-button" href="#settings">
+                    <span> Settings </span>
+                </a>
+                <a class="logout-button" href="#logout">
+                    <span> Logout </span>
+                </a>
+            </div>
+        </div>
+
+        <script>
+            function handleButtonClick(event) {
+                document.querySelectorAll('.add-button, .delete-button, .edit-button, .settings-button, .logout-button').forEach(button => {
+                    button.classList.remove('clicked');
+                });
+        
+                const clickedButton = event.currentTarget;
+                clickedButton.classList.add('clicked');
+        
+                const icon = clickedButton.querySelector('.add-button, .delete-button, .edit-button, ::before');
+                if (icon) {
+                    icon.classList.add('clicked');
+                }
+            }
+        
+            document.querySelectorAll('.add-button, .delete-button, .edit-button, .settings-button, .logout-button').forEach(button => {
+                button.addEventListener('click', handleButtonClick);
+            });
+        </script>
+
+        <div class = rightside>
+            <div class = "rightside-div-1">
+                <div class = "date">
+                    <input type="date">
+                </div>
+
+                <div class="search">
+                    <input type="search">
+                    <button class="search" placeholder="search for user">Search</button>                   
+                </div>
+                
+            </div>
+            <div class = "rightside-div-2">
+                <div class = "slot-availability-title">
+                    Slot Availability
+                </div>
+                <div class = "available-slots">
+                    <ul class="time-slots">
+                        <li><input type="checkbox"> G304 7:00 AM - 8:00 AM (25/30)</li>
+                        <li><input type="checkbox"> G304 8:00 AM - 9:00 AM (28/30)</li>
+                        <li><input type="checkbox"> G304 9:00 AM - 10:00 AM (20/30)</li>
+                        <li><input type="checkbox"> G304 10:00 AM - 11:00 AM (27/30)</li>
+                        <li><input type="checkbox"> G304 11:00 AM - 12:00 PM (30/30)</li>
+                        <li><input type="checkbox"> G304 12:00 PM - 1:00 PM (22/30)</li>
+                        <li><input type="checkbox"> G304 1:00 PM - 2:00 PM (29/30)</li>
+                        <li><input type="checkbox"> G304 2:00 PM - 3:00 PM (26/30)</li>
+                        <li><input type="checkbox"> G304 3:00 PM - 4:00 PM (23/30)</li>
+                        <li><input type="checkbox"> G304 4:00 PM - 5:00 PM (18/30)</li>
+                        <li><input type="checkbox"> G304 5:00 PM - 6:00 PM (24/30)</li>
+                        <li><input type="checkbox"> G304 6:00 PM - 7:00 PM (21/30)</li>
+                        <li><input type="checkbox"> G304 7:00 PM - 8:00 PM (19/30)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class = "rightside-div-3">
+                <div class = "slot-availability-title">
+                    Reserved Slots
+                </div>
+                <div class = "reserved-slots">
+                    <ul class="time-slots">
+                        <li><input type="checkbox"> G304 7:00 AM - 8:00 AM (25/30)</li>
+                        <li><input type="checkbox"> G304 8:00 AM - 9:00 AM (28/30)</li>
+                        <li><input type="checkbox"> G304 9:00 AM - 10:00 AM (20/30)</li>
+                        <li><input type="checkbox"> G304 10:00 AM - 11:00 AM (27/30)</li>
+                        <li><input type="checkbox"> G304 11:00 AM - 12:00 PM (30/30)</li>
+                        <li><input type="checkbox"> G304 12:00 PM - 1:00 PM (22/30)</li>
+                        <li><input type="checkbox"> G304 1:00 PM - 2:00 PM (29/30)</li>
+                        <li><input type="checkbox"> G304 2:00 PM - 3:00 PM (26/30)</li>
+                        <li><input type="checkbox"> G304 3:00 PM - 4:00 PM (23/30)</li>
+                        <li><input type="checkbox"> G304 4:00 PM - 5:00 PM (18/30)</li>
+                        <li><input type="checkbox"> G304 5:00 PM - 6:00 PM (24/30)</li>
+                        <li><input type="checkbox"> G304 6:00 PM - 7:00 PM (21/30)</li>
+                        <li><input type="checkbox"> G304 7:00 PM - 8:00 PM (19/30)</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>
