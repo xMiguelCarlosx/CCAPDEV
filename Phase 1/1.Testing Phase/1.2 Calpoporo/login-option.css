@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+
+
+@font-face{
+    font-family: Butler;
+    src:url(fonts//Butler/Butler_Bold.otf);
+}
+
+@font-face{
+    font-family: Chloe;
+    src:url(fonts//Chloe-Regular.otf);
+}
+
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;    /* Reset margin */
+    padding: 0;    /* Reset padding */
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.container-main-layout {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+    background-size: cover;
+    border-radius: 10px;
+    margin: 1px;
+}
+
+
+.leftside {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    height: 100%;
+    width: 40%;
+}
+
+.leftside-div-1 {
+    display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+     height: 15%;
+     width: 100%;
+     margin-right: 50px;
+     margin-top: 10px;
+ }
+
+ .lines-container {
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+
+}
+
+
+.lines>li {
+    display: inline-block;
+    height: 70px;
+    width: 70px;
+    margin-left: 0%;
+    margin-top: 20;
+}
+
+.lines-icon {
+    background: url('images/lines.png') no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+
+ .leftside-div-1-text {
+    color: rgb(0, 0, 0);
+    font-size: 150px;
+    margin-left: 50px;
+    font-family: Chloe;
+}
+
+ .leftside-div-2 {
+    display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-self: center;
+     align-items: center;
+     height: 70%;
+     width: 100%;
+     margin-right: 10px;
+     margin-top: 40px;
+ }
+
+ .student-container {
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+
+}
+
+
+.student>li {
+    display: inline-block;
+    height: 350px;
+    width: 350px;
+    margin-left: 0%;
+    margin-top: -30%;
+    margin-bottom: -40%;
+}
+
+.student-icon {
+    background: url('images/student-button.png') no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.student-container:hover {
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+
+}
+
+
+.student>li:hover {
+    display: inline-block;
+    height: 350px;
+    width: 350px;
+    margin-left: 0%;
+    margin-top: -30%;
+    margin-bottom: -40%;
+}
+
+.student-icon:hover {
+    background: url('images/student-button-hover.png') no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+
+ .leftside-div-2-text {
+    color: rgb(0, 0, 0);
+    font-size:40px;
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: poppins;
+}
+ 
+
+.technician-container {
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+
+}
+
+
+.technician>li {
+    display: inline-block;
+    height: 350px;
+    width: 350px;
+    margin-left: 0%;
+    margin-top: -40%;
+}
+
+.technician-icon {
+    background: url('images/technician-button.png') no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.technician-container:hover {
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+
+}
+
+
+.technician>li:hover {
+    display: inline-block;
+    height: 350px;
+    width: 350px;
+    margin-left: 0%;
+    margin-top: -40%;
+}
+
+.technician-icon:hover {
+    background: url('images/technician-button-hover.png') no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+
+.leftside-div-3 {
+    display: flex;
+     flex-direction: row;
+     justify-content: flex-start;
+     height: 10%;
+     width: 100%;
+     margin-right: 10px;
+     margin-left: -130px;;
+     margin-top: 20px;
+ }
+
+
+
+.abstract-container {
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+
+}
+
+
+.abstract>li {
+    display: inline-block;
+    height: 800px;
+    width: 800px;
+    margin-left: -15%;
+    margin-top: -30%;
+    margin-bottom: -40%;
+}
+
+.abstract-icon {
+    background: url('images/abstract.png') no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+
+.rightside {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-right: 50px;
+    height: 100%;
+    width: 60%;
+    background-image: url('images/comp.gif');
+    background-size: cover;
+    border-radius: 30px;
+    margin: 1px;
+
+}
+
+
