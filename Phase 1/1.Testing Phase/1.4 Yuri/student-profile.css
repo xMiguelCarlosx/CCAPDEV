@@ -214,7 +214,7 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 23px;
-    border-radius: 25px;
+    border-radius: 23.5px;
     color: black;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -224,17 +224,21 @@ body {
 }
 
 .reservation-button:hover,
-.settings-button:hover {
+.reservation-button.clicked,
+.settings-button:hover,
+.settings-button.clicked {
     background-color: black; 
     color: white; 
 }
 
-.logout-button:hover {
+.logout-button:hover,
+.logout-button.clicked {
     background-color: red; 
     color: white; 
 }
 
-.reservation-button:hover .reserve-icon {
+.reservation-button:hover .reserve-icon,
+.reservation-button.clicked .reserve-icon {
     filter: invert(1);
 }
 

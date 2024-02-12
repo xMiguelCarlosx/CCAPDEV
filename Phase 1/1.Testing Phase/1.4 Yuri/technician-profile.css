@@ -218,7 +218,7 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 23px;
-    border-radius: 25px;
+    border-radius: 23.5px;
     color: white;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -230,25 +230,33 @@ body {
 .add-button:hover,
 .delete-button:hover,
 .edit-button:hover,
-.settings-button:hover {
+.settings-button:hover,
+.add-button.clicked,
+.delete-button.clicked,
+.edit-button.clicked,
+.settings-button.clicked {
     background-color: white; 
     color: #004aad; 
 }
 
-.logout-button:hover {
+.logout-button:hover,
+.logout-button.clicked {
     background-color: red; 
     color: white; 
 }
 
-.add-button:hover .add-icon {
+.add-button:hover .add-icon,
+.add-button.clicked .add-icon {
     content: url('images/blue-add.png');
 }
 
-.delete-button:hover .delete-icon {
+.delete-button:hover .delete-icon,
+.delete-button.clicked .delete-icon {
     content: url('images/blue-delete.png');
 }
 
-.edit-button:hover .edit-icon {
+.edit-button:hover .edit-icon,
+.edit-button.clicked .edit-icon {
     content: url('images/blue-edit.png');
 }
 
