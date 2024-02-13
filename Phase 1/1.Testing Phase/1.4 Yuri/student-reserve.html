@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Reserve as a Student</title>
+    <link rel="stylesheet" type="text/css" href="student-reserve.css" />
+    <meta name="Student Profile" content="Reservation information" />
+</head>
+<body>
+    <div class = container>
+        <div class="leftside">
+            <div class="leftside-div-1">
+                <div class="profile">
+                    <img class="profile-pic" src="images/icon.png" />
+                    <div class="profile-info">
+                        <div class="info-role">
+                            Student
+                        </div>
+                        <div class="info-name">
+                            Name
+                        </div>
+                    </div>
+                </div>        
+            </div> 
+            <div class = "leftside-div-2">
+                <div class="profile-description-title">
+                    Profile Description
+                    <div class="description-box">
+                        <p>
+                            bsadfjhbasdjkhfbasjkhdgbjkashdbgkjadhbgkjsdhfbgsakdjfnkjlasngjkasng
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "leftside-div-3">
+                <div class="list-of-slots-title">
+                    List of Chosen Slots
+                    <div class="slots-box">
+                        <ul>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class = "leftside-div-4">
+                <div class="reservation-title">
+                    Reservation for a slot
+                </div>
+                <div class="reservation-container">
+                    <a class="reservation-button" href="#" id="add">
+                        <img class="reserve-icon" src="images/add.png" />
+                        <span> Add </span>
+                    </a>
+                    <a class="reservation-button" href="#" id="delete">
+                        <img class="reserve-icon" src="images/delete.png" />
+                        <span> Delete </span>
+                    </a>
+                    <a class="reservation-button" href="#" id="edit">
+                        <img class="reserve-icon" src="images/edit.png" />
+                        <span> Edit </span>
+                    </a>
+                </div>
+            </div>
+            <div class="leftside-div-5">
+                <a class="settings-button" href="#settings">
+                    <span> Settings </span>
+                </a>
+                <a class="logout-button" href="#logout">
+                    <span> Logout </span>
+                </a>
+            </div>
+        </div>
+
+        <script> // visual js
+            function handleButtonClick(event) {
+                document.querySelectorAll('.reservation-button, .settings-button, .logout-button').forEach(button => {
+                    button.classList.remove('clicked');
+                });
+        
+                const clickedButton = event.currentTarget;
+                clickedButton.classList.add('clicked');
+        
+                const icon = clickedButton.querySelector('.reserve-icon, ::before');
+                if (icon) {
+                    icon.classList.add('clicked');
+                }
+            }
+        
+            document.querySelectorAll('.reservation-button, .settings-button, .logout-button').forEach(button => {
+                button.addEventListener('click', handleButtonClick);
+            });
+        </script>
+        <!-- right side -->
+        <div class = rightside>
+            <div class = "rightside-div-1">
+                <div class = "date">
+                    <input type="date">
+                </div>
+
+                <div class="search">
+                    <input type="search">
+                    <button class="search" placeholder="search for user">Search</button>                   
+                </div>
+                
+            </div>
+            <div class = "rightside-div-2">
+                <div class = "slot-availability-title">
+                    Time Slots
+                </div>
+                <div class = "available-slots">
+                    <ul class="time-slots">
+                        <a class="timeslot-button" href="#" id="slot-button">
+                            <span> G304 0700 - 0730 </span>
+                        </a>
+                        <a class="timeslot-button" href="#" id="slot-button">
+                            <span> G304 0730 - 0800 </span>
+                        </a>
+                        <a class="timeslot-button" href="#" id="slot-button">
+                            <span> G304 1300 - 1330 </span>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <div class="rightside-div-3">
+                <div class="seat-availability-title">
+                    Available Seats
+                </div>
+                <div class="available-seats">
+                    <ul id="availableSeats" class="seats">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const timeSlotButtons = document.querySelectorAll('.timeslot-button');
+                const availableSeatsList = document.getElementById('availableSeats');
+                const chosenSlotsList = document.querySelector('.slots-box ul');
+        
+                // replace with dynamic data
+                const availableSeatsData = {
+                    'G304 0700 - 0730': ['Seat 1', 'Seat 4', 'Seat 15', 'Seat 29', 'Seat 30'],
+                    'G304 0730 - 0800': ['Seat 4'],
+                    'G304 1300 - 1330': []
+                };
+        
+                let selectedTimeSlot = null;
+        
+                timeSlotButtons.forEach(button => {
+                    button.addEventListener('click', function () {
+                        availableSeatsList.innerHTML = '';
+        
+                        timeSlotButtons.forEach(btn => btn.classList.remove('clicked'));
+        
+                        button.classList.add('clicked');
+                        selectedTimeSlot = button.querySelector('span').innerText;
+        
+                        const availableSeats = availableSeatsData[selectedTimeSlot] || [];
+        
+                        availableSeats.forEach(seat => {
+                            const seatItem = document.createElement('li');
+                            seatItem.innerHTML = `
+                                <input type="checkbox" value="${seat}">
+                                ${seat}</span>`;
+                            availableSeatsList.appendChild(seatItem);
+                        });
+                    });
+                });
+        
+                document.getElementById('add').addEventListener('click', function () {
+                    if (selectedTimeSlot) {
+                        const checkedSeats = Array.from(availableSeatsList.querySelectorAll('input:checked'));
+        
+                        checkedSeats.forEach(seat => {
+                            const seatItem = document.createElement('li');
+                            seatItem.innerHTML = `
+                                <input type="checkbox" value="${seat.value}" unchecked>
+                                <span>${selectedTimeSlot} - ${seat.value}</span>`;
+                            chosenSlotsList.appendChild(seatItem);
+        
+                            seat.parentNode.remove();
+        
+                            availableSeatsData[selectedTimeSlot] = availableSeatsData[selectedTimeSlot].filter(availableSeat => availableSeat !== seat.value);
+                        });
+                    }
+                });
+        
+                document.getElementById('delete').addEventListener('click', function () {
+                    if (selectedTimeSlot) {
+                        const checkedSeats = Array.from(chosenSlotsList.querySelectorAll('input:checked'));
+        
+                        checkedSeats.forEach(seat => {
+                            const seatItem = document.createElement('li');
+                            seatItem.innerHTML = `
+                                <input type="checkbox" value="${seat.value}">
+                                ${seat.value}</span>`;
+                            availableSeatsList.appendChild(seatItem);
+        
+                            seat.parentNode.remove();
+        
+                            availableSeatsData[selectedTimeSlot].push(seat.value);
+                        });
+                    }
+                });
+            });
+        </script>
+    </div>
+</body>
+</html>
