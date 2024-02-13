@@ -78,6 +78,26 @@
             </div>
         </div>
 
+        <script>
+            function handleButtonClick(event) {
+                document.querySelectorAll('.add-button, .delete-button, .edit-button, .settings-button, .logout-button').forEach(button => {
+                    button.classList.remove('clicked');
+                });
+        
+                const clickedButton = event.currentTarget;
+                clickedButton.classList.add('clicked');
+        
+                const icon = clickedButton.querySelector('.add-button, .delete-button, .edit-button, ::before');
+                if (icon) {
+                    icon.classList.add('clicked');
+                }
+            }
+        
+            document.querySelectorAll('.add-button, .delete-button, .edit-button, .settings-button, .logout-button').forEach(button => {
+                button.addEventListener('click', handleButtonClick);
+            });
+        </script>
+
         <div class = rightside>
             <div class = "rightside-div-1">
 
