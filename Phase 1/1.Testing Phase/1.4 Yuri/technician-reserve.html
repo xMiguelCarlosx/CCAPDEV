@@ -11,7 +11,8 @@
                 // replace with dynamic data
                 name: 'Juan Dela Cruz',
                 description: 'probinsyano',
-                chosenSlots: ['G304 0700 - 0730 Seat 2', 'G304 1300 - 1330 Seat 30']
+                chosenSlots: ['G304 0700 - 0730', 'G304 1300 - 1330'],
+                chosenSeats: ['Seat 2', 'Seat 30']
             },
         ];
     </script>
@@ -161,27 +162,30 @@
 
                 function displayStudentChosenSlots(studentProfile) {
                     const chosenSlotsList = document.querySelector('.slots-box ul');
+                    const availableSeatsList = document.getElementById('availableSeats');
                     chosenSlotsList.innerHTML = '';
                 
                     if (studentProfile) {
-                        document.querySelector('.description-box').innerText = studentProfile.description;
+                        document.querySelector('.description-box p').innerText = studentProfile.description;
                 
-                        studentProfile.chosenSlots.forEach(slot => {
+                        studentProfile.chosenSlots.forEach((slot, index) => {
+                            const seat = studentProfile.chosenSeats[index];
+                
                             const slotItem = document.createElement('li');
                             const checkbox = document.createElement('input');
                             checkbox.type = 'checkbox';
-                            checkbox.value = slot;
+                            checkbox.value = `${slot} ${seat}`;
                             checkbox.checked = false;
                 
                             slotItem.appendChild(checkbox);
-                            slotItem.appendChild(document.createTextNode(slot));
+                            slotItem.appendChild(document.createTextNode(`${slot} ${seat}`));
                             chosenSlotsList.appendChild(slotItem);
+                
                         });
                     } else {
-                        document.querySelector('.info-name').innerText = 'Name';
                         alert('Student not found!');
                     }
-                }
+                }                
         
                 // replace with dynamic data
                 const availableSeatsData = {
@@ -219,9 +223,16 @@
         
                         checkedSeats.forEach(seat => {
                             const seatItem = document.createElement('li');
-                            seatItem.innerHTML = `
+                            const seatInfo = seat.value.split(' ');
+                            if (seatInfo[5] == undefined) { // for when seat being added is a seat from availableSeatsData
+                                seatItem.innerHTML = `
                                 <input type="checkbox" value="${seat.value}" unchecked>
                                 <span>${selectedTimeSlot} ${seat.value}</span>`;
+                            } else {                        // for when seat being added is a seat from studentProfiles
+                                seatItem.innerHTML = `
+                                <input type="checkbox" value="${seat.value}" unchecked>
+                                <span>${selectedTimeSlot} Seat ${seatInfo[5]}</span>`;
+                            }
                             chosenSlotsList.appendChild(seatItem);
         
                             seat.parentNode.remove();
@@ -234,20 +245,21 @@
                 document.getElementById('delete').addEventListener('click', function () {
                     if (selectedTimeSlot) {
                         const checkedSeats = Array.from(chosenSlotsList.querySelectorAll('input:checked'));
-        
+                
                         checkedSeats.forEach(seat => {
                             const seatItem = document.createElement('li');
+                            const seatInfo = seat.value.split(' ');
                             seatItem.innerHTML = `
                                 <input type="checkbox" value="${seat.value}">
-                                ${seat.value}</span>`;
+                                Seat ${seatInfo[5]}</span>`;
                             availableSeatsList.appendChild(seatItem);
-        
+                
                             seat.parentNode.remove();
-        
+                
                             availableSeatsData[selectedTimeSlot].push(seat.value);
                         });
                     }
-                });
+                });                              
             });
         </script>
     </div>

@@ -387,6 +387,13 @@ input[type = "date"]{
     border-radius: 10px;
 }
 
+.slots-box li input[type="checkbox"],
+.available-slots li input[type="checkbox"],
+.available-seats li input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+}
+
 .seats {
     list-style-type: none;
     padding: 0;
