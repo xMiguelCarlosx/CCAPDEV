@@ -249,9 +249,15 @@
                         checkedSeats.forEach(seat => {
                             const seatItem = document.createElement('li');
                             const seatInfo = seat.value.split(' ');
-                            seatItem.innerHTML = `
-                                <input type="checkbox" value="${seat.value}">
+                            if (seatInfo[5] == undefined) { // for when seat being added is a seat from availableSeatsData
+                                seatItem.innerHTML = `
+                                <input type="checkbox" value="${seat.value}" unchecked>
+                                ${seat.value}</span>`;
+                            } else {                        // for when seat being added is a seat from studentProfiles
+                                seatItem.innerHTML = `
+                                <input type="checkbox" value="${seat.value}" unchecked>
                                 Seat ${seatInfo[5]}</span>`;
+                            }
                             availableSeatsList.appendChild(seatItem);
                 
                             seat.parentNode.remove();
