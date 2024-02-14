@@ -10,6 +10,7 @@
             {
                 // replace with dynamic data
                 name: 'Juan Dela Cruz',
+                description: 'probinsyano',
                 chosenSlots: ['G304 0700 - 0730 Seat 2', 'G304 1300 - 1330 Seat 30']
             },
         ];
@@ -36,7 +37,7 @@
                     Student's Profile Description
                     <div class="description-box">
                         <p>
-                            bsadfjhbasdjkhfbasjkhdgbjkashdbgkjadhbgkjsdhfbgsakdjfnkjlasngjkasng
+                            
                         </p>
                     </div>
                 </div>
@@ -163,7 +164,7 @@
                     chosenSlotsList.innerHTML = '';
                 
                     if (studentProfile) {
-                        document.querySelector('.info-name').innerText = studentProfile.name;
+                        document.querySelector('.description-box').innerText = studentProfile.description;
                 
                         studentProfile.chosenSlots.forEach(slot => {
                             const slotItem = document.createElement('li');
