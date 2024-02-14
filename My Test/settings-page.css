@@ -1,0 +1,406 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+
+.navigation-title-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    height: 100%;
+    width: 10%;
+    margin-left: 16%;
+}
+
+.navigation-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    color: #fff;
+    font-weight: bold;
+    font-size: 40px;
+    width: 50%;
+    height: 100%;
+    padding: 6px 14px;
+    transition: 0.5s;
+
+}
+
+.nav-main-container {
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    backdrop-filter: blur(40px);
+    border: 3px solid rgba(255, 255, 255, .2);
+    height: 920px;
+    width: 83%;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-left: 16%;
+
+}
+
+.upper-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 500px;
+    width: 1580px;
+}
+
+
+
+
+/*UPDATE IMAGE CONTAINER SECTION-----------------------------------------*/
+.update-image-container {
+    display: flex;
+
+    background: transparent;
+    border: 4px solid rgba(255, 255, 255, .2);
+    border-radius: 15px;
+    height: 460px;
+    width: 390px;
+    margin: 20px;
+}
+
+
+.picture {
+    height: 470px;
+    width: 100%;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: left;
+    color: #333;
+}
+
+
+
+.picture img {
+    object-fit: cover;
+    width: 300px;
+    height: 300px;
+    border-radius: 20%;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    background: transparent;
+    border: 4px solid rgba(255, 255, 255, .2);
+    color: #ffffff;
+    width: 250px;
+    border-radius: 10px;
+    font-size: 30px;
+    padding: 12px;
+    margin: 10px;
+    margin-left: 27px;
+}
+
+label:hover {
+    background: rgba(255, 255, 255, .2);
+}
+
+input {
+    display: none;
+}
+
+/*ANONYMOUS CONTAINER SECTION-----------------------------------------*/
+.anonymous-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+    overflow: hidden;
+    border: 4px solid rgba(255, 255, 255, .2);
+    border-radius: 15px;
+    height: 460px;
+    width: 390px;
+    margin-left: 5px;
+    margin-top: 20px;
+}
+
+.option-text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    background: rgb(160, 160, 160);
+    color: #fff;
+    margin-top: -4px;
+    font-size: 30px;
+    height: 50px;
+    width: 400px;
+}
+
+.anonymous-status {
+    border: 4px solid rgba(255, 255, 255, .2);
+    color: #fff;
+    border-radius: 10px;
+    margin-top: 30px;
+    font-size: 25px;
+    width: 250px;
+    text-align: center;
+}
+
+.option-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.check-button {
+    display: flex;
+    background: rgb(255, 11, 11);
+    margin-top: 10px;
+    height: 100px;
+    width: 200px;
+    border-radius: 20px;
+
+}
+
+.check-button {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background: transparent;
+    color: #fff;
+    border: 4px solid rgba(255, 255, 255, .2);
+    font-size: 90px;
+    margin-top: 20px;
+    height: 100px;
+    width: 200px;
+    border-radius: 20px;
+}
+
+.check-button:hover {
+    background: rgba(0, 255, 42, 0.2);
+
+}
+
+.x-button {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background: transparent;
+    border: 4px solid rgba(255, 255, 255, .2);
+    color: #fff;
+    font-size: 90px;
+    margin-top: 20px;
+    height: 100px;
+    width: 200px;
+    border-radius: 20px;
+}
+
+.x-button:hover {
+    background: rgba(255, 0, 0, 0.2);
+
+}
+
+/*DEELTE ACCOUNT CONTAINER SECTION-----------------------------------------*/
+.delete-account-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+    overflow: hidden;
+    border: 4px solid rgba(255, 255, 255, .2);
+    border-radius: 15px;
+    height: 460px;
+    width: 390px;
+    margin-left: 5px;
+    margin-top: 20px;
+
+}
+
+.delete-account-text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    background: red;
+    color: #fff;
+    margin-top: -4px;
+    font-size: 30px;
+    height: 50px;
+    width: 400px;
+    margin-bottom: 50px;
+}
+/* Modal styles */
+.popup-container {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.popup-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 20px;
+    width: 80%;
+    text-align: center;
+}
+
+/* Modal close button style */
+.close-popup {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-popup:hover,
+.close-popup:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.check-delete-account-button {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background: transparent;
+    color: #fff;
+    border: 4px solid rgba(255, 255, 255, .2);
+    font-size: 90px;
+    margin-top: 20px;
+    height: 100px;
+    width: 200px;
+    border-radius: 20px;
+}
+
+.check-delete-account-button:hover {
+    background: rgba(0, 255, 42, 0.2);
+
+}
+
+
+/* Button style */
+.btn {
+    background-color: #f1f1f1;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #ddd;
+}
+
+
+
+/*USER DESCRIPTION CONTAINER SECTION-----------------------------------------*/
+.down-container {
+    display: flex;
+    height: 400px;
+    width: auto;
+}
+
+.user-description-container {
+    display: flex;
+    background: transparent;
+    border: 4px solid rgba(255, 255, 255, .2);
+    border-radius: 10px;
+    height: auto;
+    width: 1600px;
+    margin: 10px
+}
+
+.description-box {
+    display: flex;
+    flex-direction: flex-start;
+    background-color: #fff;
+    height: 95%;
+    width: 100%;
+    margin: 10px;
+    border-radius: 20px;
+
+}
+
+.input-description-container {
+    border-radius: 20px;
+    height: 95%;
+    width: 100%;
+    padding: 7px;
+    margin: 10px;
+    font-size: 30px;
+
+}
+
+#profile-description {
+    border: 2px solid rgba(255, 255, 255, .2);
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+#profile-description:hover {
+    border-color: rgba(255, 255, 255, .2);
+}
+
+.modify-button-container {
+    display: flex;
+    flex-direction: column;
+    flex-direction: right;
+
+    height: 50%;
+    width: 12%;
+    margin-top: 10%;
+    margin-right: 15px;
+
+    padding: 10px;
+    font-size: 30px;
+    color: #fff;
+}
+
+.edit-button {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: 4px solid rgba(255, 255, 255, .2);
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.edit-button:hover {
+    background: rgba(255, 255, 255, .2);
+}
+
+.save-button {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: 4px solid rgba(255, 255, 255, .2);
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.save-button:hover {
+    background: rgba(255, 255, 255, .2);
+}
+
+.delete-button {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: 4px solid rgba(255, 255, 255, .2);
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.delete-button:hover {
+    background: rgba(255, 255, 255, .2);
+}
