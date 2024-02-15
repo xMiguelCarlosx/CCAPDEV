@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Reserve as a Technician</title>
+    <link rel="stylesheet" type="text/css" href="technician-reserve.css" />
+    <meta name="Technician Profile" content="Reservation information" />
+
+    <script>
+        const studentProfiles = [
+            {
+                // replace with dynamic data
+                name: 'Juan Dela Cruz',
+                description: 'probinsyano',
+                chosenSlots: ['G304 0700 - 0730', 'G304 1300 - 1330'],
+                chosenSeats: ['Seat 2', 'Seat 30']
+            },
+        ];
+    </script>
+</head>
+<body>
+    <div class = container>
+        <div class="leftside">
+            <div class="leftside-div-1">
+                <div class="profile">
+                    <img class="profile-pic" src="images/tech-icon.png" />
+                    <div class="profile-info">
+                        <div class="info-role">
+                            Technician
+                        </div>
+                        <div class="info-name">
+                            Name
+                        </div>
+                    </div>
+                </div>        
+            </div> 
+            <div class = "leftside-div-2">
+                <div class="profile-description-title">
+                    Student's Profile Description
+                    <div class="description-box">
+                        <p>
+                            
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "leftside-div-3">
+                <div class="list-of-slots-title">
+                    Student's Chosen Slots
+                    <div class="slots-box">
+                        <ul>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class = "leftside-div-4">
+                <div class="reservation-title">
+                    Reservation for a slot
+                </div>
+                <div class="reservation-container">
+                    <a class="add-button" href="#" id="add">
+                        <img class="add-icon" src="images/tech-add.png" />
+                        <span> Add </span>
+                    </a>
+                    <a class="delete-button" href="#" id="delete">
+                        <img class="delete-icon" src="images/tech-delete.png" />
+                        <span> Delete </span>
+                    </a>
+                    <a class="edit-button" href="#" id="edit">
+                        <img class="edit-icon" src="images/tech-edit.png" />
+                        <span> Edit </span>
+                    </a>
+                </div>
+            </div>
+            <div class="leftside-div-5">
+                <a class="settings-button" href="#settings">
+                    <span> Settings </span>
+                </a>
+                <a class="logout-button" href="#logout">
+                    <span> Logout </span>
+                </a>
+            </div>
+        </div>
+
+        <script>
+            function handleButtonClick(event) {
+                document.querySelectorAll('.add-button, .delete-button, .edit-button, .settings-button, .logout-button').forEach(button => {
+                    button.classList.remove('clicked');
+                });
+        
+                const clickedButton = event.currentTarget;
+                clickedButton.classList.add('clicked');
+        
+                const icon = clickedButton.querySelector('.add-button, .delete-button, .edit-button, ::before');
+                if (icon) {
+                    icon.classList.add('clicked');
+                }
+            }
+        
+            document.querySelectorAll('.add-button, .delete-button, .edit-button, .settings-button, .logout-button').forEach(button => {
+                button.addEventListener('click', handleButtonClick);
+            });
+        </script>
+    <!-- right side -->
+        <div class = rightside>
+            <div class = "rightside-div-1">
+                <div class = "date">
+                    <input type="date">
+                </div>
+
+                <div class="search">
+                    <input type="search" id="search-input" placeholder="search for user">
+                    <button type="button" class="search-button">Search</button>                   
+                </div>
+                
+            </div>
+            <div class = "rightside-div-2">
+                <div class = "slot-availability-title">
+                    Time Slots
+                </div>
+                <div class = "available-slots">
+                    <ul class="time-slots">
+                        <a class="timeslot-button" href="#" id="slot-button">
+                            <span> G304 0700 - 0730 </span>
+                        </a>
+                        <a class="timeslot-button" href="#" id="slot-button">
+                            <span> G304 0730 - 0800 </span>
+                        </a>
+                        <a class="timeslot-button" href="#" id="slot-button">
+                            <span> G304 1300 - 1330 </span>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <div class="rightside-div-3">
+                <div class="seat-availability-title">
+                    Available Seats
+                </div>
+                <div class="available-seats">
+                    <ul id="availableSeats" class="seats">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const timeSlotButtons = document.querySelectorAll('.timeslot-button');
+                const availableSeatsList = document.getElementById('availableSeats');
+                const chosenSlotsList = document.querySelector('.slots-box ul');
+
+                document.querySelector('.search-button').addEventListener('click', function () {
+                    const searchInput = document.getElementById('search-input').value.trim();
+                    const studentProfile = searchStudentProfile(searchInput);
+                    displayStudentChosenSlots(studentProfile);
+                });
+
+                function searchStudentProfile(studentName) {
+                    return studentProfiles.find(profile => profile.name.toLowerCase() === studentName.toLowerCase());
+                }
+
+                function displayStudentChosenSlots(studentProfile) {
+                    const chosenSlotsList = document.querySelector('.slots-box ul');
+                    const availableSeatsList = document.getElementById('availableSeats');
+                    chosenSlotsList.innerHTML = '';
+                
+                    if (studentProfile) {
+                        document.querySelector('.description-box p').innerText = studentProfile.description;
+                
+                        studentProfile.chosenSlots.forEach((slot, index) => {
+                            const seat = studentProfile.chosenSeats[index];
+                
+                            const slotItem = document.createElement('li');
+                            const checkbox = document.createElement('input');
+                            checkbox.type = 'checkbox';
+                            checkbox.value = `${slot} ${seat}`;
+                            checkbox.checked = false;
+                
+                            slotItem.appendChild(checkbox);
+                            slotItem.appendChild(document.createTextNode(`${slot} ${seat}`));
+                            chosenSlotsList.appendChild(slotItem);
+                
+                        });
+                    } else {
+                        alert('Student not found!');
+                    }
+                }                
+        
+                // replace with dynamic data
+                const availableSeatsData = {
+                    'G304 0700 - 0730': ['Seat 1', 'Seat 4', 'Seat 15', 'Seat 29', 'Seat 30'],
+                    'G304 0730 - 0800': ['Seat 4'],
+                    'G304 1300 - 1330': []
+                };
+        
+                let selectedTimeSlot = null;
+        
+                timeSlotButtons.forEach(button => {
+                    button.addEventListener('click', function () {
+                        availableSeatsList.innerHTML = '';
+        
+                        timeSlotButtons.forEach(btn => btn.classList.remove('clicked'));
+        
+                        button.classList.add('clicked');
+                        selectedTimeSlot = button.querySelector('span').innerText;
+        
+                        const availableSeats = availableSeatsData[selectedTimeSlot] || [];
+        
+                        availableSeats.forEach(seat => {
+                            const seatItem = document.createElement('li');
+                            seatItem.innerHTML = `
+                                <input type="checkbox" value="${seat}">
+                                ${seat}</span>`;
+                            availableSeatsList.appendChild(seatItem);
+                        });
+                    });
+                });
+        
+                document.getElementById('add').addEventListener('click', function () {
+                    if (selectedTimeSlot) {
+                        const checkedSeats = Array.from(availableSeatsList.querySelectorAll('input:checked'));
+        
+                        checkedSeats.forEach(seat => {
+                            const seatItem = document.createElement('li');
+                            const seatInfo = seat.value.split(' ');
+                            if (seatInfo[5] == undefined) { // for when seat being added is a seat from availableSeatsData
+                                seatItem.innerHTML = `
+                                <input type="checkbox" value="${seat.value}" unchecked>
+                                <span>${selectedTimeSlot} ${seat.value}</span>`;
+                            } else {                        // for when seat being added is a seat from studentProfiles
+                                seatItem.innerHTML = `
+                                <input type="checkbox" value="${seat.value}" unchecked>
+                                <span>${selectedTimeSlot} Seat ${seatInfo[5]}</span>`;
+                            }
+                            chosenSlotsList.appendChild(seatItem);
+        
+                            seat.parentNode.remove();
+        
+                            availableSeatsData[selectedTimeSlot] = availableSeatsData[selectedTimeSlot].filter(availableSeat => availableSeat !== seat.value);
+                        });
+                    }
+                });
+        
+                document.getElementById('delete').addEventListener('click', function () {
+                    if (selectedTimeSlot) {
+                        const checkedSeats = Array.from(chosenSlotsList.querySelectorAll('input:checked'));
+                
+                        checkedSeats.forEach(seat => {
+                            const seatItem = document.createElement('li');
+                            const seatInfo = seat.value.split(' ');
+                            if (seatInfo[5] == undefined) { // for when seat being added is a seat from availableSeatsData
+                                seatItem.innerHTML = `
+                                <input type="checkbox" value="${seat.value}" unchecked>
+                                ${seat.value}</span>`;
+                            } else {                        // for when seat being added is a seat from studentProfiles
+                                seatItem.innerHTML = `
+                                <input type="checkbox" value="${seat.value}" unchecked>
+                                Seat ${seatInfo[5]}</span>`;
+                            }
+                            availableSeatsList.appendChild(seatItem);
+                
+                            seat.parentNode.remove();
+                
+                            availableSeatsData[selectedTimeSlot].push(seat.value);
+                        });
+                    }
+                });                              
+            });
+        </script>
+    </div>
+</body>
+</html>
