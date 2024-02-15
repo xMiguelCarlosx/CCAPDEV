@@ -1,15 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
 
-@font-face{
+@font-face {
     font-family: Chloe;
-    src:url(fonts//Chloe-Regular.otf);
+    src: url(fonts//Chloe-Regular.otf);
 }
 
 
 body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin: 0;    /* Reset margin */
-    padding: 0;    /* Reset padding */
+    margin: 0;
+    /* Reset margin */
+    padding: 0;
+    /* Reset padding */
     background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
@@ -47,11 +49,14 @@ body {
 
 .dlsu-logo {
     display: flex;
-    flex-direction: row;    /*you may remove this since it has the same result/output*/
-    justify-content: space-between;    /* to put a space between the two actions-group*/
+    flex-direction: row;
+    /*you may remove this since it has the same result/output*/
+    justify-content: space-between;
+    /* to put a space between the two actions-group*/
 }
 
-.dlsu-logo-1 {    /*TO REMOVE THE MARGIN AND PADDING OF AN INCLINE-BLOCK*/
+.dlsu-logo-1 {
+    /*TO REMOVE THE MARGIN AND PADDING OF AN INCLINE-BLOCK*/
     margin-top: 1px;
 }
 
@@ -100,42 +105,50 @@ body {
 
 .register-container {
     display: flex;
-    flex-direction: row;    /*you may remove this since it has the same result/output*/
-    justify-content: space-between;   /* to put a space between the two actions-group*/
-    margin-left: 10px;
-}
-
-.register-container:hover {
-    display: flex;
-    flex-direction: row;    /*you may remove this since it has the same result/output*/
-    justify-content: space-between;    /* to put a space between the two actions-group*/
-}
-.register>li {
-    display: inline-block;
-    width: 215.5px;
-    height: 75.3px;
-}
-
-.register>li:hover {
-    display: inline-block;
-    width: 215.5px;
-    height: 75.3px;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 50px;
+    margin-top: 10px;
+    height: 100px;
+    width: 200px;
+    text-decoration: none;
 }
 
 .register-button {
-    width: 25px;
-    height: 25px;
-    background-image: url('images/register-white.png');
-    background-position: center;
-    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+    background: white;
+    font-weight: bolder;
+    font-size: 30px;
+    height: 80px;
+    width: 180px;
+    border-radius: 70px;
+    transition: background-color 0.3s, color 0.3s;
+    /* Add transition for smooth effect */
 }
 
-.register-button:hover{
-   
-    background-image: url('images/register-gray.png');
-    background-position: center;
-    background-size: contain;
+.register-button:hover {
+    background: gray;
+
+    cursor: pointer;
 }
+
+.register-button a {
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.register-button a:hover {
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+
+
 
 .leftside-div-4 {
     display: flex;
@@ -151,12 +164,6 @@ body {
     width: 100%;
 }
 
-.asterisk-container {
-    display: flex;
-    flex-direction: row;
-    margin: 0px;
-
-}
 
 
 .asterisk>li {
@@ -168,7 +175,6 @@ body {
 }
 
 .asterisk-icon {
-    background: url('images/asterisk.png') no-repeat;
     background-position: center;
     background-size: contain;
 }
@@ -183,8 +189,8 @@ body {
 }
 
 .reserve-description-2 {
-      color: aliceblue;
-      font-weight: bold;
+    color: aliceblue;
+    font-weight: bold;
     font-size: 60px;
     margin-left: 85px;
     margin-top: 45px;
@@ -206,7 +212,7 @@ body {
 }
 
 .rightside-div-1 {
-   display: flex;
+    display: flex;
     flex-direction: row;
     justify-content: flex-end;
     height: 15%;
@@ -215,44 +221,51 @@ body {
     margin-top: 10px;
 }
 
-
 .login-container {
     display: flex;
     flex-direction: row;
-
-}
-
-.login>li {
-    display: inline-block;
-    width: 215.5px;
-    height: 75.3px;
+    justify-content: center;
+    margin-left: 50px;
+    margin-top: 10px;
+    height: 100px;
+    width: 200px;
+    text-decoration: none;
 }
 
 .login-button {
-    background: url('images/login-white.png') no-repeat;
-    background-position: center;
-    background-size: contain;
-}
-
-
-.login-container:hover {
     display: flex;
-    flex-direction: row;
- }
-
-.login>li:hover {
-display: inline-block;
- width: 215.5px;
-height: 75.3px;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+    background: white;
+    font-weight: bolder;
+    font-size: 30px;
+    height: 80px;
+    width: 180px;
+    border-radius: 70px;
 }
 
 .login-button:hover {
-    background: url('images/login-gray.png') no-repeat;
+    background: gray;
+    cursor: pointer;
+}
+
+.login-button a {
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-button a:hover {
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-button {
     background-position: center;
     background-size: contain;
 }
-
-
 
 
 .rightside-div-2 {
@@ -269,7 +282,7 @@ height: 75.3px;
 .check-slots-container {
     display: flex;
     justify-content: center;
-    flex-direction: column;  
+    flex-direction: column;
     align-content: center;
     width: 65%;
     height: 94%;
@@ -278,45 +291,44 @@ height: 75.3px;
     border-radius: 60px;
     font-size: 16px;
     overflow: hidden;
-   
+
 }
 
-
-.upper-container{
+.upper-container {
     display: flex;
     justify-content: center;
     align-self: center;
-    flex-direction: row;  
+    flex-direction: row;
     width: 99%;
-    height: 50%;                                              
+    height: 50%;
     font-size: 16px;
     overflow: hidden;
-   
+
 }
 
-.upper-left-container{
+.upper-left-container {
     display: flex;
     justify-content: flex-start;
     align-self: flex-start;
-    flex-direction: column;  
+    flex-direction: column;
     width: 50%;
     height: 100%;
     border-radius: 50px;
     font-size: 16px;
     overflow: hidden;
-   
-   
+
+
 }
 
-.upper-left-1-container{
+.upper-left-1-container {
     display: flex;
-    flex-direction: row;  
+    flex-direction: row;
     width: 100%;
     height: 100%;
     font-size: 16px;
     overflow: hidden;
     justify-content: space-evenly;
-     
+
 }
 
 .star-container {
@@ -361,24 +373,24 @@ height: 75.3px;
     background-size: contain;
 }
 
-.upper-left-2-container{
+.upper-left-2-container {
     display: flex;
     justify-content: center;
     align-self: center;
-    flex-direction: column;  
+    flex-direction: column;
     width: 100%;
     height: 100%;
     font-size: 16px;
     overflow: hidden;
-   
-   
+
+
 }
 
-.upper-left-2-text{
+.upper-left-2-text {
     display: flex;
     justify-content: center;
     align-self: center;
-    flex-direction: column;  
+    flex-direction: column;
     width: 100%;
     height: 100%;
     font-size: 30px;
@@ -386,20 +398,20 @@ height: 75.3px;
     margin-bottom: 30px;
     color: white;
     overflow: hidden;
-   
-   
+
+
 }
 
 
 
-.upper-right-container{
+.upper-right-container {
     display: flex;
-    flex-direction: column;  
+    flex-direction: column;
     width: 50%;
     height: 100%;
     font-size: 16px;
     overflow: hidden;
-   
+
 }
 
 #computer-lab {
@@ -419,7 +431,7 @@ height: 75.3px;
     justify-content: center;
     align-items: flex-start;
     align-content: center;
-    flex-direction: column;  
+    flex-direction: column;
     width: 93%;
     height: 40%;
     backdrop-filter: blur(20px);
@@ -428,7 +440,7 @@ height: 75.3px;
     border: 2px solid rgba(255, 255, 255, .2);
     font-size: 16px;
     overflow: hidden;
-    
+
 }
 
 .availability-text-container {
@@ -439,8 +451,9 @@ height: 75.3px;
     margin-bottom: 45px;
 
 }
+
 .availability-text-1 {
-    
+
     height: 30%;
     color: white;
     font-size: 25px;
@@ -448,7 +461,7 @@ height: 75.3px;
 }
 
 .availability-text-2 {
-    
+
     height: 30%;
     color: white;
     font-size: 25px;
@@ -480,4 +493,3 @@ height: 75.3px;
     font-family: poppins;
     margin-left: 270px;
 }
-
