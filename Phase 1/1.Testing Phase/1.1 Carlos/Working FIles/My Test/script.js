@@ -21,13 +21,16 @@ function toggle_button_animation() {
 
 /*SETTINGS-------------------------- */
 function update_profile_pic() {
+    let profile_pics = document.querySelectorAll(".user-picture img, .settings-picture img");
+    let input_file = document.getElementById("input-file");
 
-   let profile_pic = document.getElementById("profile-pic");
-   let input_file = document.getElementById("input-file");
-
-   input_file.onchange = function () {
-      profile_pic.src = URL.createObjectURL(input_file.files[0]);
-   }
+    input_file.onchange = function () {
+        let file = input_file.files[0];
+        let url = URL.createObjectURL(file);
+        profile_pics.forEach(pic => {
+            pic.src = url;
+        });
+    };
 }
 
 function edit_profile_description() {
