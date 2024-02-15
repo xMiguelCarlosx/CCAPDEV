@@ -15,7 +15,14 @@
 <body>
 
     <nav class="sidebar">
-
+        
+        <div class="user-image-container">
+            <div class="user-picture">
+                <img src="images/dlsu.png" id="profile-pic">
+                 <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file">
+            </div>
+        </div>
+  
         <div class="logo-menu">
             <h2 class="logo">Name of user </h2>
             <i class='bx bx-menu toggle-btn'></i>
@@ -61,7 +68,8 @@
         </ul>
     </nav>
 
-    <div class="page-content">    <!--WIll be deleted if user delete's account-->
+    <div class="page-content">
+        <!--WIll be deleted if user delete's account-->
 
         <div class="navigation-title-container">
             <div class="navigation-title">Settings</div>
@@ -72,8 +80,8 @@
             <div class="upper-container">
 
                 <div class="update-image-container">
-                    <div class="picture">
-                        <img src="images/profile.png" id="profile-pic">
+                    <div class="settings-picture">
+                        <img src="images/dlsu.png" id="profile-pic">
                         <label for="input-file">Upload Image</label>
                         <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file">
                     </div>
@@ -107,7 +115,7 @@
                         <div class="popup-content">
                             <span class="close-popup">&times;</span>
                             <p>Account will be deleted. Are you sure you want to proceed?</p>
-                            <button class="confirm-delete-button"><a href= "welcome-page.html"> Confirm </a> </button>
+                            <button class="confirm-delete-button"><a href="welcome-page.html"> Confirm </a> </button>
                             <button class="cancel-delete-button">Cancel</button>
                         </div>
                     </div>
