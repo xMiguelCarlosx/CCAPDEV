@@ -55,7 +55,7 @@
 .up-container {
     display: flex;
     flex-direction: row;
-justify-content: space-around;
+    justify-content: space-around;
     height: 475px;
     width: 1585px;
 }
@@ -63,22 +63,31 @@ justify-content: space-around;
 .up-left-container {
     display: flex;
     flex-direction: column;
-    overflow: hidden;
-    border-radius: 20px;
+       border-radius: 20px;
     height: 460px;
     width: 400px;
     margin: 20px;
     margin-left: 60px;
 }
 
+.profile-description-inner-container{
+display: flex;
+flex-direction: column;
+
+ 
+height: 250px;
+width: auto;
+padding: 20px;
+
+
+}
+
 .anonymous-status {
     display: flex;
-    overflow: hidden;
     text-align: center;
     border: 1px solid rgba(255, 255, 255, .2);
     color: #fff;
-    border-radius: 10px;
-
+   
     font-size: 25px;
     height: 80px;
     width: 360px;
@@ -87,18 +96,20 @@ justify-content: space-around;
 .user-description-box {
     display: flex;
     flex-direction: row;
-    background: rgb(255, 255, 255);
     width: auto;
     height: auto;
-    border-radius: 10px;
+      margin-top: 15px;
+    margin-left: 10px;
+
+    
 }
 
 .input-description-container {
-
+    display: flex;
+color: white;
     height: 100%;
     width: 100%;
     padding: 7px;
-
     font-size: 20px;
 
 }
@@ -109,13 +120,37 @@ justify-content: space-around;
     width: 100%;
     padding: 5px;
     cursor: pointer;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 #profile-description:hover {
     border-color: rgba(255, 255, 255, .2);
 }
 
+
+.status-inner-container{
+display: flex;
+flex-direction: column;
+height: 250px;
+width: auto ;
+padding: 20px;
+
+
+}
+
+.anonymous-status{
+    display: flex;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, .2);
+    color: #fff;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-size: 20px;
+    width: 330px;
+    height: 35px;
+    text-align: center;
+    margin-left: 24px;
+}
 
 
 .up-right-container {
