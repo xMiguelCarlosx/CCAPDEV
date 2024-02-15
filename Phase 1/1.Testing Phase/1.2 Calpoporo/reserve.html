@@ -24,16 +24,16 @@
         <ul class="list">
 
             <li class="list-item">
-                <a href="home-page.html">
+                <a href="dashboard.html">
                     <i class='bx bx-grid-alt'></i>
-                    <span class="link-name" style="">Dashboard</span>
+                    <span class="link-name" >Dashboard</span>
                 </a>
             </li>
 
             <li class="list-item">
                 <a href="#">
                     <i class='bx bx-user'></i>
-                    <span class="link-name" style="">User</span>
+                    <span class="link-name">User</span>
                 </a>
             </li>
 
@@ -137,103 +137,21 @@
                 <span>delete</span>
             </div>
 
+            <div class="edit-button" id="save">
+                <i class='bx bx-trash'></i>
+                <span>save</span>
+            </div>
+
         </div>
 
 
     </div>
     </div>
     <script>
-        function handleButtonClick(event) {
-            document.querySelectorAll('.reservation-button, .settings-button, .logout-button').forEach(button => {
-                button.classList.remove('clicked');
-            });
-    
-            const clickedButton = event.currentTarget;
-            clickedButton.classList.add('clicked');
-    
-            const icon = clickedButton.querySelector('.reserve-icon, ::before');
-            if (icon) {
-                icon.classList.add('clicked');
-            }
-        }
-    
-        document.querySelectorAll('.reservation-button, .settings-button, .logout-button').forEach(button => {
-            button.addEventListener('click', handleButtonClick);
-        });
 
-        document.addEventListener('DOMContentLoaded', function () {
-            const timeSlotButtons = document.querySelectorAll('.timeslot-button');
-            const availableSeatsList = document.getElementById('availableSeats');
-            const chosenSlotsList = document.querySelector('.slots-box ul');
-    
-            // replace with dynamic data
-            const availableSeatsData = {
-                'G304 0700 - 0730': ['Seat 1', 'Seat 4', 'Seat 15', 'Seat 29', 'Seat 30', 'Seat 31', 'Seat 32','Seat 39', 'Seat 1', 'Seat 4', 'Seat 15', 'Seat 29', 'Seat 30', 'Seat 31', 'Seat 32','Seat 39'],
-                'G304 0730 - 0800': ['Seat 4'],
-                'G304 1300 - 1330': []
-            };
-    
-            let selectedTimeSlot = null;
-    
-            timeSlotButtons.forEach(button => {
-                button.addEventListener('click', function () {
-                    availableSeatsList.innerHTML = '';
-    
-                    timeSlotButtons.forEach(btn => btn.classList.remove('clicked'));
-    
-                    button.classList.add('clicked');
-                    selectedTimeSlot = button.querySelector('span').innerText;
-    
-                    const availableSeats = availableSeatsData[selectedTimeSlot] || [];
-    
-                    availableSeats.forEach(seat => {
-                        const seatItem = document.createElement('li');
-                        seatItem.innerHTML = `
-                            <input type="checkbox" value="${seat}">
-                            ${seat}</span>`;
-                        availableSeatsList.appendChild(seatItem);
-                    });
-                });
-            });
-    
-            document.getElementById('add').addEventListener('click', function () {
-                if (selectedTimeSlot) {
-                    const checkedSeats = Array.from(availableSeatsList.querySelectorAll('input:checked'));
-    
-                    checkedSeats.forEach(seat => {
-                        const seatItem = document.createElement('li');
-                        seatItem.innerHTML = `
-                            <input type="checkbox" value="${seat.value}" unchecked>
-                            <span>${selectedTimeSlot} - ${seat.value}</span>`;
-                        chosenSlotsList.appendChild(seatItem);
-    
-                        seat.parentNode.remove();
-    
-                        availableSeatsData[selectedTimeSlot] = availableSeatsData[selectedTimeSlot].filter(availableSeat => availableSeat !== seat.value);
-                    });
-                }
-            });
-    
-            document.getElementById('delete').addEventListener('click', function () {
-                if (selectedTimeSlot) {
-                    const checkedSeats = Array.from(chosenSlotsList.querySelectorAll('input:checked'));
-    
-                    checkedSeats.forEach(seat => {
-                        const seatItem = document.createElement('li');
-                        seatItem.innerHTML = `
-                            <input type="checkbox" value="${seat.value}">
-                            ${seat.value}</span>`;
-                        availableSeatsList.appendChild(seatItem);
-    
-                        seat.parentNode.remove();
-    
-                        availableSeatsData[selectedTimeSlot].push(seat.value);
-                    });
-                }
-            });
-        });
+initializeBookingSystem();
+displayRegisteredStudents();
 
-        // Call other functions from index.js
     </script>
 
 <script src="index.js"></script>
@@ -245,3 +163,27 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
