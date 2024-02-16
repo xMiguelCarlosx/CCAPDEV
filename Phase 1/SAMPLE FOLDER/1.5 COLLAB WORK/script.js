@@ -497,7 +497,7 @@ function check_anonymous_status() {
     });
 }
 
-(function () {
+
     function delete_account() {
         var modal = document.querySelector(".popup-container");
         var btn = document.querySelector(".check-delete-account-button");
@@ -525,7 +525,7 @@ function check_anonymous_status() {
     }
 
     window.addEventListener("load", delete_account);
-})();
+
 
 /*TECHNICIAN'S HOMEPAGE AND RESERVATION-------------------------- */
 function findStudent() {
