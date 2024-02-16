@@ -159,7 +159,7 @@ function TechloginValidation(event) {
     // Check if the email and password match the predefined credentials
     if (email === "technician@gmail.com" && password === "DLSU123") {
         // Redirect to the home page if the credentials are correct
-        window.location.href = "tech-home-page.html";
+        window.location.href = "5-tech-home-page.html";
         return true;
     } else {
         // Display an error message if the credentials are incorrect
@@ -526,3 +526,112 @@ function check_anonymous_status() {
 
     window.addEventListener("load", delete_account);
 })();
+
+/*TECHNICIAN'S HOMEPAGE AND RESERVATION-------------------------- */
+function findStudent() {
+    var firstName = document.getElementById("FirstName").value.trim().toLowerCase();
+    var lastName = document.getElementById("LastName").value.trim().toLowerCase();
+    var userDataArray = JSON.parse(sessionStorage.getItem('userData')) || [];
+
+    var student = userDataArray.find(function (user) {
+        return user.firstName.toLowerCase() === firstName && user.lastName.toLowerCase() === lastName;
+    });
+
+    if (student) {
+        window.location.href = "5a-reserve.html?firstName=" + encodeURIComponent(student.firstName) + "&lastName=" + encodeURIComponent(student.lastName);
+    } else {
+        alert("Student not found.");
+    }
+}
+
+function initializeTechnicianBookingSystem() {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const firstName = urlParams.get('firstName');
+    const lastName = urlParams.get('lastName');
+    const fullName = firstName + " " + lastName;
+    const userDataArray = JSON.parse(sessionStorage.getItem('userData')) || [];
+    const student = userDataArray.find(user => user.firstName === firstName && user.lastName === lastName);
+
+    if (student) {
+        const chosenSlotsList = document.querySelector('.slots-box ul');
+        chosenSlotsList.innerHTML = '';
+
+        student.chosenSlots.forEach(slot => {
+            const slotItem = document.createElement('li');
+            slotItem.textContent = `${slot} - ${student.chosenSeats.join(', ')}`;
+            chosenSlotsList.appendChild(slotItem);
+        });        
+
+        const availableSeatsList = document.getElementById('availableSeats');
+        const timeSlotButtons = document.querySelectorAll('.timeslot-button');
+        let selectedTimeSlot = null;
+
+        timeSlotButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                availableSeatsList.innerHTML = '';
+
+                timeSlotButtons.forEach(btn => btn.classList.remove('clicked'));
+
+                button.classList.add('clicked');
+                selectedTimeSlot = button.querySelector('span').innerText;
+
+                const availableSeats = availableSeatsData[selectedTimeSlot] || [];
+
+                availableSeats.forEach(seat => {
+                    const seatItem = document.createElement('li');
+                    seatItem.innerHTML = `
+                        <input type="checkbox" value="${seat}">
+                        ${seat}</span>`;
+                    availableSeatsList.appendChild(seatItem);
+                });
+            });
+        });
+
+        document.getElementById('add').addEventListener('click', function () {
+            if (selectedTimeSlot) {
+                const checkedSeats = Array.from(availableSeatsList.querySelectorAll('input:checked'));
+                checkedSeats.forEach(seat => {
+                    const seatItem = document.createElement('li');
+                    seatItem.innerHTML = `
+                        <input type="checkbox" value="${seat.value}" unchecked>
+                        <span>${selectedTimeSlot} - ${seat.value}</span>`;
+                    chosenSlotsList.appendChild(seatItem);
+                    seat.parentNode.remove();
+                    const index = availableSeatsData[selectedTimeSlot].indexOf(seat.value);
+                    if (index !== -1) {
+                        availableSeatsData[selectedTimeSlot].splice(index, 1);
+                    }
+                });
+            }
+        });
+
+        document.getElementById('delete').addEventListener('click', function () {
+            const checkedSeats = Array.from(chosenSlotsList.querySelectorAll('input:checked'));
+            checkedSeats.forEach(seat => {
+                const seatItem = document.createElement('li');
+                seatItem.innerHTML = `
+                    <input type="checkbox" value="${seat.value}">
+                    ${seat.value}</span>`;
+                availableSeatsList.appendChild(seatItem);
+                seat.parentNode.remove();
+                availableSeatsData[selectedTimeSlot].push(seat.value);
+            });
+        });
+
+        document.getElementById('save').addEventListener('click', function () {
+            const chosenSlots = Array.from(chosenSlotsList.querySelectorAll('li')).map(slot => slot.querySelector('span').innerText);
+            const email = sessionStorage.getItem('loggedInUserEmail');
+            const userDataArray = JSON.parse(sessionStorage.getItem('userData')) || [];
+            const userIndex = userDataArray.findIndex(user => user.email === email);
+
+            if (userIndex !== -1) {
+                userDataArray[userIndex].chosenSlots = chosenSlots;
+                sessionStorage.setItem('userData', JSON.stringify(userDataArray));
+                alert('Chosen slots and seats saved successfully.');
+            }
+        });
+    } else {
+        alert("Student not founds.");
+    }
+}
