@@ -21,7 +21,7 @@
     height: 100%;
     padding: 6px 14px;
     transition: 0.5s;
-    
+
 }
 
 .nav-main-container {
@@ -61,10 +61,10 @@
 }
 
 .slot-content {
-color: #fff;
-font-size: 20px;
-margin-left: 10px;
-border-radius: 5px;
+    color: #fff;
+    font-size: 20px;
+    margin-left: 10px;
+    border-radius: 5px;
 }
 
 
@@ -84,13 +84,13 @@ border-radius: 5px;
 
 
 .slot-content li {
-   list-style-type:none;
+    list-style-type: none;
 }
 
 
 .slot-content li:hover {
     background-color: rgba(20, 34, 14, 0.473);
-   
+
 }
 
 /*UPPER CONTAINER - USER DESCRIPTION & LIST OF CHOSEN RESERVED SLOTS----------------*/
@@ -105,46 +105,36 @@ border-radius: 5px;
 .up-left-container {
     display: flex;
     flex-direction: column;
-       border-radius: 20px;
+    border-radius: 20px;
     height: 460px;
     width: 400px;
     margin: 20px;
     margin-left: 60px;
 }
 
-.profile-description-inner-container{
-display: flex;
-flex-direction: column;
-height: 250px;
-width: auto;
-padding: 20px;
-}
-
-.anonymous-status {
+.profile-description-inner-container {
     display: flex;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, .2);
-    color: #fff;
-   
-    font-size: 25px;
-    height: 80px;
-    width: 360px;
+  
+    flex-direction: column;
+    height: 250px;
+    width: auto;
+    padding: 20px;
 }
 
 .user-description-box {
     display: flex;
     flex-direction: row;
-    width: auto;
-    height: auto;
-      margin-top: 15px;
-    margin-left: 10px;
+    justify-content: center;
+      width: fit-content;
+    overflow: hidden;
+    height: 200px;
+    margin-top: 15px;
 
-    
 }
 
 .input-description-container {
     display: flex;
-color: white;
+    color: white;
     height: 100%;
     width: 100%;
     padding: 7px;
@@ -152,31 +142,60 @@ color: white;
 
 }
 
+.anonymous-status {
+    display: flex;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, .2);
+    color: #fff;
+
+    font-size: 25px;
+    height: 80px;
+    width: 360px;
+}
+
 #profile-description {
+    display: flex;
+    overflow: auto;
     border: 2px solid rgba(255, 255, 255, .2);
     height: 100%;
     width: 100%;
     padding: 5px;
     cursor: pointer;
     border-radius: 10px;
+  
+    
 }
 
 #profile-description:hover {
     border-color: rgba(255, 255, 255, .2);
 }
 
+#profile-description::-webkit-scrollbar {
+    width: 8px;
+}
 
-.status-inner-container{
-display: flex;
-flex-direction: column;
-height: 250px;
-width: auto ;
-padding: 20px;
+#profile-description::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
+#profile-description::-webkit-scrollbar-track {
+    background-color: white;
+    border-radius: 10px;
+}
+
+
+.status-inner-container {
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    width: auto;
+    padding: 20px;
 
 
 }
 
-.anonymous-status{
+.anonymous-status {
     display: flex;
     justify-content: center;
     border: 1px solid rgba(255, 255, 255, .2);
