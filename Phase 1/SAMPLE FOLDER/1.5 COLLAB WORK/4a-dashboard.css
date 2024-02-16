@@ -53,19 +53,13 @@
 .inner-container {
     display: flex;
     flex-direction: column;
-    border: 1px solid rgba(255, 255, 255, .2);
+
     border-radius: 10px;
     height: 500px;
     width: auto;
     margin: 20px;
 }
 
-.slot-content {
-    color: #fff;
-    font-size: 20px;
-    margin-left: 10px;
-    border-radius: 5px;
-}
 
 
 .slot-content::-webkit-scrollbar {
@@ -114,7 +108,6 @@
 
 .profile-description-inner-container {
     display: flex;
-  
     flex-direction: column;
     height: 250px;
     width: auto;
@@ -125,7 +118,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-      width: fit-content;
+    width: fit-content;
     overflow: hidden;
     height: 200px;
     margin-top: 15px;
@@ -158,12 +151,10 @@
     overflow: auto;
     border: 2px solid rgba(255, 255, 255, .2);
     height: 100%;
-    width: 100%;
+    width: 350%;
     padding: 5px;
     cursor: pointer;
     border-radius: 10px;
-  
-    
 }
 
 #profile-description:hover {
@@ -175,12 +166,12 @@
 }
 
 #profile-description::-webkit-scrollbar-thumb {
-    background-color: #888;
+   background-color: white;
     border-radius: 10px;
 }
 
 #profile-description::-webkit-scrollbar-track {
-    background-color: white;
+     background-color: #888;
     border-radius: 10px;
 }
 
@@ -214,12 +205,31 @@
     display: flex;
     flex-direction: column;
     border-radius: 20px;
+   
     height: 460px;
     width: 1000px;
     margin: 20px;
     margin-right: 60px;
 }
 
+
+
+.chosen-slot-content {
+    display: flex;
+
+    flex-direction: column;
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    padding: 10px;
+    border-radius: 10px;
+    height: 360px;
+    width: auto;
+
+    overflow-y: auto;
+    color: rgb(255, 255, 255);
+      font-size: 20px;
+}
 
 
 
@@ -242,6 +252,23 @@
     margin: 20px;
 }
 
+.available-slot-content {
+    display: flex;
+
+    flex-direction: column;
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    padding: 10px;
+    border-radius: 10px;
+    height: 360px;
+    width: auto;
+
+    overflow-y: auto;
+    color: rgb(255, 255, 255);
+       font-size: 20px;
+}
+
 .down-right-container {
     display: flex;
     flex-direction: column;
@@ -249,4 +276,20 @@
     height: 375px;
     width: 695px;
     margin: 20px;
+}
+
+.reserve-slot-content {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    padding: 10px;
+    border-radius: 10px;
+    height: 360px;
+    width: auto;
+    overflow-y: auto;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+
 }
