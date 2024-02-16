@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 
-
 .navigation-title-container {
     display: flex;
     flex-direction: row;
@@ -22,7 +21,7 @@
     height: 100%;
     padding: 6px 14px;
     transition: 0.5s;
-
+    
 }
 
 .nav-main-container {
@@ -38,6 +37,7 @@
 
 }
 
+/*Global Variables for dashboard*/
 .text {
     font-weight: bold;
     text-align: left;
@@ -50,6 +50,48 @@
     font-size: 25px;
 }
 
+.inner-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 10px;
+    height: 500px;
+    width: auto;
+    margin: 20px;
+}
+
+.slot-content {
+color: #fff;
+font-size: 20px;
+margin-left: 10px;
+border-radius: 5px;
+}
+
+
+.slot-content::-webkit-scrollbar {
+    width: 4px;
+}
+
+.slot-content::-webkit-scrollbar-thumb {
+    background-color: #e6e2e2;
+    border-radius: 10px;
+}
+
+.slot-content::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.082);
+    border-radius: 10px;
+}
+
+
+.slot-content li {
+   list-style-type:none;
+}
+
+
+.slot-content li:hover {
+    background-color: rgba(20, 34, 14, 0.473);
+   
+}
 
 /*UPPER CONTAINER - USER DESCRIPTION & LIST OF CHOSEN RESERVED SLOTS----------------*/
 .up-container {
@@ -73,13 +115,9 @@
 .profile-description-inner-container{
 display: flex;
 flex-direction: column;
-
- 
 height: 250px;
 width: auto;
 padding: 20px;
-
-
 }
 
 .anonymous-status {
@@ -163,15 +201,8 @@ padding: 20px;
     margin-right: 60px;
 }
 
-.inner-container {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid rgba(255, 255, 255, .2);
-    border-radius: 10px;
-    height: 500px;
-    width: auto;
-    margin: 20px;
-}
+
+
 
 .down-container {
     display: flex;
