@@ -18,7 +18,7 @@
 
         <div class="user-image-container">
             <div class="user-picture">
-                <img src="images/dlsu.png" id="profile-pic">
+                <img  id="profile-pic">
                 <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file">
             </div>
         </div>
@@ -31,7 +31,7 @@
         <ul class="list">
 
             <li class="list-item">
-                <a href="4-homepage.html">
+                <a href="4a-dashboard.html">
                     <i class='bx bx-grid-alt'></i>
                     <span class="link-name" style="">Dashboard</span>
                 </a>
@@ -78,7 +78,7 @@
                     <div class="text"> Profile Description</div>
                     <div class="user-description-box">
                         <div class="input-description-container">
-                            <p id="profile-description" contenteditable="false">Enter your description in Settings</p>
+                            <p id="profile-description">Enter your description in Settings</p>
                         </div>
                     </div>
 
@@ -125,6 +125,7 @@
     <script src="index.js"></script>
     <script>
         updateUserName();
+        update_dashboard_status();
         displayRegisteredStudents();
         sidebar_toggle_animation();
         displayUserChosenSlots();
