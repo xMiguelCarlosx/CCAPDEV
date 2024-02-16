@@ -632,6 +632,6 @@ function initializeTechnicianBookingSystem() {
             }
         });
     } else {
-        alert("Student not founds.");
+        alert("Student not found.");
     }
 }

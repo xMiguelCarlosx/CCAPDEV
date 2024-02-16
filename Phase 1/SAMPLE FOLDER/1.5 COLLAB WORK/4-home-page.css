@@ -16,7 +16,7 @@ This file is for navigation panel and its contents when clicked
 
 body {
     min-height: 100vh;
-    background: url('images/computer-lab.gif') no-repeat;
+    background: url('images/computer-lab.jpg') no-repeat;
     background-size: cover;
     background-position: center;
 }
