@@ -125,13 +125,10 @@ body {
     height: 80px;
     width: 180px;
     border-radius: 70px;
-    transition: background-color 0.3s, color 0.3s;
-    /* Add transition for smooth effect */
-}
+   }
 
 .register-button:hover {
     background: gray;
-
     cursor: pointer;
 }
 
