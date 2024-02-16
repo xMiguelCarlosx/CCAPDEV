@@ -293,13 +293,12 @@ function initializeBookingSystem() {
 
 //DASHBOARD------------------------------------------------
 function update_dashboard_status() {
-    const isAnonymous = localStorage.getItem('isAnonymous') === 'true';
+    const isAnonymous = sessionStorage.getItem('isAnonymous') === 'true';
     const elements = document.querySelectorAll('.anonymous-status');
     elements.forEach(element => {
-        element.innerText = isAnonymous ? 'Currently reserving as anonymous' : 'Not reserving as anonymous';
+        element.innerText = isAnonymous ? 'Anonymous' : 'Not anonymous';
     });
 }
-
 
 function displayRegisteredStudents() {
     var userDataArray = JSON.parse(sessionStorage.getItem('userData')) || [];
@@ -372,7 +371,7 @@ function displayUserChosenSlots() {
                 userChosenSlotsContainer.appendChild(slotItem);
             });
         } else {
-            // Display a message if the user hasn't chosen any slots
+            // display a message if the user hasn't chosen any slots
             const noSlotsMessage = document.createElement('p');
             noSlotsMessage.textContent = 'No slots chosen by this user.';
             userChosenSlotsContainer.appendChild(noSlotsMessage);
@@ -409,6 +408,14 @@ function displayReservedSlots() {
 
 
 /*SETTINGS-------------------------- */
+function update_settings() {
+    const isAnonymous = sessionStorage.getItem('isAnonymous') === 'true';
+    const elements = document.querySelectorAll('.anonymous-status');
+    elements.forEach(element => {
+        element.innerText = isAnonymous ? 'Currently reserving as anonymous' : 'Not reserving as anonymous';
+    });
+}
+
 function update_profile_pic() {
     let profile_pics = document.querySelectorAll(".user-picture img, .settings-picture img");
     let input_file = document.getElementById("input-file");
@@ -444,13 +451,13 @@ function clear_profile_description() {
 
 function check_anonymous_status() {
     document.querySelector('.check-button').addEventListener('click', function () {
-        localStorage.setItem('isAnonymous', false);
+        sessionStorage.setItem('isAnonymous', true);
         // Update the display on the settings page
         document.querySelector('.anonymous-status').innerText = "Currently reserving as anonymous";
     });
 
     document.querySelector('.x-button').addEventListener('click', function () {
-        localStorage.setItem('isAnonymous', true);
+        sessionStorage.setItem('isAnonymous', false);
         // Update the display on the settings page
         document.querySelector('.anonymous-status').innerText = "Not reserving as anonymous";
     });
