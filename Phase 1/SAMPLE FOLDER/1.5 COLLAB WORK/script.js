@@ -298,6 +298,14 @@ function update_dashboard_status() {
     elements.forEach(element => {
         element.innerText = isAnonymous ? 'Anonymous' : 'Not anonymous';
     });
+
+    var description = document.getElementById('profile-description');
+    
+    var storedDescription = sessionStorage.getItem('profile-description');
+
+    if (storedDescription) {
+        description.textContent = storedDescription;
+    }
 }
 
 function displayRegisteredStudents() {
@@ -414,6 +422,14 @@ function update_settings() {
     elements.forEach(element => {
         element.innerText = isAnonymous ? 'Currently reserving as anonymous' : 'Not reserving as anonymous';
     });
+
+    var description = document.getElementById('profile-description');
+    
+    var storedDescription = sessionStorage.getItem('profile-description');
+
+    if (storedDescription) {
+        description.textContent = storedDescription;
+    }
 }
 
 function update_profile_pic() {
@@ -431,9 +447,26 @@ function update_profile_pic() {
 
 function edit_profile_description() {
     var description = document.getElementById('profile-description');
+    var editFunction = document.getElementById('edit-function');
+    var saveFunction = document.getElementById('save-function');
+
+    // Set the maximum character limit
+    var maxCharacters = 200; // Adjust this value as needed
+
     description.contentEditable = 'true';
-    document.getElementById('edit-function').style.display = 'none';
-    document.getElementById('save-function').style.display = 'inline-block';
+    editFunction.style.display = 'none';
+    saveFunction.style.display = 'inline-block';
+
+    // Add an input event listener to check character count
+    description.addEventListener('input', function () {
+        var currentCharacters = description.textContent.length;
+
+        // Check if the character limit is reached
+        if (currentCharacters > maxCharacters) {
+            // Trim the content to the maximum allowed characters
+            description.textContent = description.textContent.substring(0, maxCharacters);
+        }
+    });
 }
 
 function save_profile_description() {
@@ -441,6 +474,7 @@ function save_profile_description() {
     description.contentEditable = 'false';
     document.getElementById('edit-function').style.display = 'inline-block';
     document.getElementById('save-function').style.display = 'none';
+    sessionStorage.setItem('profile-description', description.textContent);
 }
 
 function clear_profile_description() {
