@@ -1,11 +1,13 @@
 var firstName, lastName, email, password, chosenSlot, chosenSeat;
-var  date, time, seat, 
+var  date, time, seat, reservedemail;
 
 //// sessionStorage.clear(); 
 import sampleStudents from "./sampleStudents";
+import reservedSeats from "./reservedSeats";
 
 // Retrieve existing user data from session storage
 var userDataArray = JSON.parse(sessionStorage.getItem('userData')) || [];
+var reserveDataArray = JSON.parse(sessionStorage.getItem('reserveData')) || [];
 
 // Check if each sample student already exists in the stored user data
 sampleStudents.forEach(function(sampleStudent) {
@@ -18,6 +20,16 @@ sampleStudents.forEach(function(sampleStudent) {
         userDataArray.push(sampleStudent);
     }
 });
+
+reserveSeat.forEach(function(reservedSeats) {
+    var exists = reserveDataArray.some(function(seats) {
+         return seat.email === reservedSeat.email;
+        });
+        if (!exists) {
+        reserveDataArray.push(reservedSeat);
+    }
+});
+    
 
 // Save the updated user data array back to session storage
 sessionStorage.setItem('userData', JSON.stringify(userDataArray));
