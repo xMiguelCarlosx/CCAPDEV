@@ -1,4 +1,4 @@
-var firstName, lastName, email, password, chosenSlot, chosenSeat;
+var firstName, lastName, email, password, chosenSlot, chosenSeat, date;
 
 //// sessionStorage.clear(); 
 var sampleStudents = [
@@ -8,7 +8,8 @@ var sampleStudents = [
         email: 'john.doe@example.com',
         password: 'password1',
         chosenSlots: ['G304 0700 - 0730', 'G304 0730 - 0800'],
-        chosenSeats: ['Seat 1', 'Seat 2']
+        chosenSeats: ['Seat 1', 'Seat 2'],
+        date: '2024-03-14' // Add date property
     },
     {
         firstName: 'Jane',
@@ -16,7 +17,8 @@ var sampleStudents = [
         email: 'jane.smith@example.com',
         password: 'password2',
         chosenSlots: ['G304 0730 - 0800', 'G304 1300 - 1330'],
-        chosenSeats: ['Seat 3', 'Seat 4']
+        chosenSeats: ['Seat 3', 'Seat 4'],
+        date: '2024-03-15' // Add date property
     },
     {
         firstName: 'Alice',
@@ -24,7 +26,8 @@ var sampleStudents = [
         email: 'alice.johnson@example.com',
         password: 'password3',
         chosenSlots: [],
-        chosenSeats: []
+        chosenSeats: [],
+        date: '2024-03-16' // Add date property
     },
     {
         firstName: 'Bob',
@@ -32,7 +35,8 @@ var sampleStudents = [
         email: 'bob.brown@example.com',
         password: 'password4',
         chosenSlots: ['G304 0700 - 0730'],
-        chosenSeats: ['Seat 5']
+        chosenSeats: ['Seat 5'],
+        date: '2024-04-15' // Add date property
     },
     {
         firstName: 'Emily',
@@ -40,7 +44,8 @@ var sampleStudents = [
         email: 'emily.davis@example.com',
         password: 'password5',
         chosenSlots: ['G304 0730 - 0800', 'G304 1300 - 1330'],
-        chosenSeats: ['Seat 6', 'Seat 7']
+        chosenSeats: ['Seat 6', 'Seat 7'],
+        date: '2024-03-15' // Add date property
     }
 ];
 
@@ -213,15 +218,18 @@ function initializeBookingSystem() {
     const timeSlotButtons = document.querySelectorAll('.timeslot-button');
     const availableSeatsList = document.getElementById('availableSeats');
     const chosenSlotsList = document.querySelector('.slots-box ul');
+    const dateInput = document.querySelector('.date input[type="date"]');
 
     // Replace with dynamic data
-    const availableSeatsData = {
+    var availableSeatsData = {
         'G304 0700 - 0730': ['Seat 1', 'Seat 4', 'Seat 15', 'Seat 29', 'Seat 30', 'Seat 31', 'Seat 32', 'Seat 39'],
         'G304 0730 - 0800': ['Seat 4'],
         'G304 1300 - 1330': []
     };
 
     let selectedTimeSlot = null;
+
+    // Function to update available seats list
 
     timeSlotButtons.forEach(button => {
         button.addEventListener('click', function () {
@@ -244,6 +252,7 @@ function initializeBookingSystem() {
         });
     });
 
+    // Event listener for adding seats
     document.getElementById('add').addEventListener('click', function () {
         if (selectedTimeSlot) {
             const checkedSeats = Array.from(availableSeatsList.querySelectorAll('input:checked'));
@@ -263,6 +272,7 @@ function initializeBookingSystem() {
         }
     });
 
+    // Event listener for deleting seats
     document.getElementById('delete').addEventListener('click', function () {
         const checkedSeats = Array.from(chosenSlotsList.querySelectorAll('input:checked'));
         checkedSeats.forEach(seat => {
@@ -277,6 +287,7 @@ function initializeBookingSystem() {
         });
     });
 
+    // Event listener for saving chosen slots
     document.getElementById('save').addEventListener('click', function () {
         const chosenSlots = Array.from(chosenSlotsList.querySelectorAll('li')).map(slot => slot.querySelector('span').innerText);
         const email = sessionStorage.getItem('loggedInUserEmail');
@@ -284,9 +295,17 @@ function initializeBookingSystem() {
         const userIndex = userDataArray.findIndex(user => user.email === email);
 
         if (userIndex !== -1) {
+            // Get the selected date from the input field
+            const selectedDate = dateInput.value;
+            
+            // Add the chosen slots and selected date to the user data
             userDataArray[userIndex].chosenSlots = chosenSlots;
+            userDataArray[userIndex].date = selectedDate;
+            
+            // Save the updated user data array back to session storage
             sessionStorage.setItem('userData', JSON.stringify(userDataArray));
-            alert('Chosen slots and seats saved successfully.');
+            
+            alert('Chosen slots and date saved successfully.');
         }
     });
 }
@@ -316,14 +335,27 @@ function displayRegisteredStudents() {
     studentList.innerHTML = '';
 
     // Iterate through user data array and create list items for each user
-    userDataArray.forEach(function(user) {
-        var listItem = document.createElement('li');
-        var slots = user.chosenSlots || []; // Get the chosen slots for the user
-        var slotsText = slots.length > 0 ? slots.join(', ') : 'No slots chosen'; // Display the chosen slots or a message if none chosen
-        listItem.textContent = user.firstName + " " + user.lastName + ": " + slotsText;
-        studentList.appendChild(listItem);
-    });
+        userDataArray.forEach(function(user) {
+            var slots = user.chosenSlots || [];
+            var seats = user.chosenSeats || [];
+            var date = user.date; // Assuming "choosenDate" is correctly set
+        
+            // Iterate over the slots to create an entry for each
+            slots.forEach((slot, index) => {
+                // Only proceed if there is at least one slot
+                if (slots.length > 0) {
+                    var listItem = document.createElement('li');
+                    var seat = seats[index] || 'No seat chosen'; // Handles missing seat info
+        
+                    // Format the text as "name, seat, date, time"
+                    listItem.textContent = `${user.firstName} ${user.lastName}, ${seat}, ${date}, ${slot}`;
+                    studentList.appendChild(listItem);
+                }
+            });
+        });
+        
 }
+
 
 
 function displayAvailableSlots() {
@@ -374,8 +406,12 @@ function displayUserChosenSlots() {
         if (user.chosenSlots.length > 0) {
             // Iterate over the chosen slots and create list items
             user.chosenSlots.forEach(slot => {
+                // Find the user's chosen date
+                var chosenDate = user.date || 'Date not specified';
+
+                // Create list item with both date and slot information
                 const slotItem = document.createElement('li');
-                slotItem.textContent = slot;
+                slotItem.textContent = slot + ' on ' + chosenDate;
                 userChosenSlotsContainer.appendChild(slotItem);
             });
         } else {
@@ -404,9 +440,13 @@ function displayReservedSlots() {
 
     // Iterate through user data array and create list items for each reserved slot
     userDataArray.forEach(function(user) {
+        // Find the user's chosen date
+        var chosenDate = user.date;
+
         user.chosenSlots.forEach(function(slot) {
+            // Create list item with both date and slot information
             var listItem = document.createElement('li');
-            listItem.textContent = user.firstName + ' ' + user.lastName + ': ' + slot;
+            listItem.textContent = user.firstName + ' ' + user.lastName + ': ' + slot + ' on ' + chosenDate;
             reservedSlotsContainer.appendChild(listItem);
         });
     });
@@ -635,5 +675,3 @@ function initializeTechnicianBookingSystem() {
         alert("Student not found.");
     }
 }
-
-
