@@ -335,25 +335,25 @@ function displayRegisteredStudents() {
     studentList.innerHTML = '';
 
     // Iterate through user data array and create list items for each user
-        userDataArray.forEach(function(user) {
-            var slots = user.chosenSlots || [];
-            var seats = user.chosenSeats || [];
-            var date = user.date; // Assuming "choosenDate" is correctly set
-        
-            // Iterate over the slots to create an entry for each
-            slots.forEach((slot, index) => {
-                // Only proceed if there is at least one slot
-                if (slots.length > 0) {
-                    var listItem = document.createElement('li');
-                    var seat = seats[index] || date; 
-        
-                    // Format the text as "name, seat, date, time"
-                    listItem.textContent = `${user.firstName} ${user.lastName}, ${seat}, ${date}, ${slot}`;
-                    studentList.appendChild(listItem);
-                }
-            });
+    userDataArray.forEach(function(user) {
+        var slots = user.chosenSlots || [];
+        var seats = user.chosenSeats || [];
+        var date = user.date; // Assuming "choosenDate" is correctly set
+    
+        // Iterate over the slots to create an entry for each
+        slots.forEach((slot, index) => {
+            // Only proceed if there is at least one slot
+            if (slots.length > 0) {
+                var listItem = document.createElement('li');
+                var seat = seats[index] || date; // Handles missing seat info
+    
+                // Format the text as "name, seat, date, time"
+                listItem.textContent = `${user.firstName} ${user.lastName}, ${seat}, ${date}, ${slot}`;
+                studentList.appendChild(listItem);
+            }
         });
-        
+    });
+    
 }
 
 
@@ -451,6 +451,7 @@ function displayReservedSlots() {
         });
     });
 }
+
 
 
 
