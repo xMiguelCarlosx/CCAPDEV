@@ -345,7 +345,7 @@ function displayRegisteredStudents() {
                 // Only proceed if there is at least one slot
                 if (slots.length > 0) {
                     var listItem = document.createElement('li');
-                    var seat = seats[index] || 'No seat chosen'; // Handles missing seat info
+                    var seat = seats[index] || date; 
         
                     // Format the text as "name, seat, date, time"
                     listItem.textContent = `${user.firstName} ${user.lastName}, ${seat}, ${date}, ${slot}`;
