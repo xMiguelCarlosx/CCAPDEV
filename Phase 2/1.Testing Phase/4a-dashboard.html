@@ -14,7 +14,7 @@
 <body>
     <nav class="sidebar">
 
-       
+
         <div class="user-image-container">
             <div class="user-picture">
                 <img src="images/dlsu.png" id="profile-pic">
@@ -28,6 +28,13 @@
         </div>
 
         <ul class="list">
+
+            <li class="list-item">
+                <a href="4-home-page.html">
+                    <i class='bx bx-home'></i>
+                    <span class="link-name" style="">Homepage</span>
+                </a>
+            </li>
 
             <li class="list-item">
                 <a href="4a-dashboard.html">
@@ -76,11 +83,11 @@
                 <div class="profile-description-inner-container">
                     <div class="text"> Profile Description</div>
                     <div class="user-description-box">
-                       
+
                         <div class="input-description-container">
                             <p id="profile-description">Enter your description in Settings</p>
                         </div>
-                    
+
                     </div>
 
                 </div>
@@ -133,9 +140,9 @@
                 <div class="inner-container">
 
                     <div class="reserve-slot-content">
-                            <div class="slot-content">
-                                <ul id="studentList"></ul>
-                            </div>
+                        <div class="slot-content">
+                            <ul id="studentList"></ul>
+                        </div>
                     </div>
                 </div>
 
@@ -145,7 +152,7 @@
         </div>
     </div>
 
-    
+
     <script>
         updateUserName();
         update_dashboard_status();
@@ -153,6 +160,7 @@
         sidebar_toggle_animation();
         displayUserChosenSlots();
         displayAvailableSlots();
+        updateSelectedDateTime();
         // You may need to call a function here to populate student slots dynamically
     </script>
 
