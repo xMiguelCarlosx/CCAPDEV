@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 
 const app = express();
-const port = 3002;
+const port = 3000;
 
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
@@ -91,18 +91,12 @@ app.get('/5-tech-home-page.html', function (req, res) {
     res.sendFile(path.join(__dirname, '5-tech-home-page.html'));
 });
 
-app.get('/5-tech-home-page.css', function (req, res) {
-    res.sendFile(path.join(__dirname, '5-tech-home-page.css'));
-});
 
 //5A PAGE----------------------------------------------------------
 app.get('/5a-reserve.html', function (req, res) {
     res.sendFile(path.join(__dirname, '5a-reserve.html'));
 });
 
-app.get('/5a-reserve.css', function (req, res) {
-    res.sendFile(path.join(__dirname, '5a-reserve.css'));
-});
 
 //5B PAGE----------------------------------------------------------
 app.get('/5b-search.html', function (req, res) {
@@ -118,9 +112,6 @@ app.get('/5c-tech-dashboard.html', function (req, res) {
     res.sendFile(path.join(__dirname, '5c-tech-dashboard.html'));
 });
 
-app.get('/5c-tech-dashboard.css', function (req, res) {
-    res.sendFile(path.join(__dirname, '5c-tech-dashboard.css'));
-});
 
 
 
@@ -129,5 +120,6 @@ app.listen(port, function () {
 });
 
 
+
 //TEMPORARY TEST ONLY --------------------------------------------
-//localhost:3002/
+//localhost:3000/

@@ -330,31 +330,81 @@ function update_dashboard_status() {
 function displayRegisteredStudents() {
     var userDataArray = JSON.parse(sessionStorage.getItem('userData')) || [];
     var studentList = document.getElementById('studentList');
+    var searchInput = document.querySelector('.search input[type="search"]');
+    var showAllButton = document.createElement('button');
+    showAllButton.textContent = 'Show All';
+    showAllButton.classList.add('show-all-button');
+    var searchButton = document.querySelector('.search button');
 
     // Clear any existing content
     studentList.innerHTML = '';
 
+    // Event listener for search button click
+    searchButton.addEventListener('click', function() {
+        var searchTerm = searchInput.value.trim().toLowerCase();
+
+        if (searchTerm === '') {
+            // If search term is empty, display all users
+            displayAllUsers(userDataArray);
+        } else {
+            // Filter user data based on search term
+            var filteredUsers = userDataArray.filter(function(user) {
+                var fullName = user.firstName.toLowerCase() + ' ' + user.lastName.toLowerCase();
+                return fullName.includes(searchTerm);
+            });
+
+            // Update the displayed list with filtered data
+            displayFilteredUsers(filteredUsers);
+        }
+    });
+
+    // Event listener for "Show All" button click
+    showAllButton.addEventListener('click', function() {
+        // Display all users
+        displayAllUsers(userDataArray);
+
+        // Clear the search input
+        searchInput.value = '';
+    });
+
+// Function to display all users
+function displayAllUsers(users) {
+    // Clear any existing content
+    studentList.innerHTML = '';
+
     // Iterate through user data array and create list items for each user
-    userDataArray.forEach(function(user) {
+    users.forEach(function(user) {
         var slots = user.chosenSlots || [];
         var seats = user.chosenSeats || [];
         var date = user.date; // Assuming "choosenDate" is correctly set
-    
+
         // Iterate over the slots to create an entry for each
         slots.forEach((slot, index) => {
-            // Only proceed if there is at least one slot
-            if (slots.length > 0) {
-                var listItem = document.createElement('li');
-                var seat = seats[index] || date; // Handles missing seat info
-    
-                // Format the text as "name, seat, date, time"
-                listItem.textContent = `${user.firstName} ${user.lastName}, ${seat}, ${date}, ${slot}`;
-                studentList.appendChild(listItem);
-            }
+            var listItem = document.createElement('li');
+            var seat = seats[index] || date; // Handles missing seat info
+
+            // Format the text as "name, seat, date, time"
+            listItem.textContent = `${user.firstName} ${user.lastName}, ${seat}, ${date}, ${slot}`;
+            studentList.appendChild(listItem);
         });
     });
-    
 }
+    // Function to display filtered user data
+    function displayFilteredUsers(filteredUsers) {
+        // Clear any existing content
+        studentList.innerHTML = '';
+
+        // Display filtered users
+        displayAllUsers(filteredUsers);
+    }
+
+    // Append "Show All" button next to the search button
+    searchButton.parentNode.insertBefore(showAllButton, searchButton.nextSibling);
+    
+    // Display all users initially
+    displayAllUsers(userDataArray);
+}
+
 
 
 
