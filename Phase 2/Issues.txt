@@ -1,0 +1,15 @@
+Missing Requirements
+
+1. List of chosen reserved slots and reserved slots 
+
+  A.  Dashboard 
+    - dapat mawala yung chosen reserved slots and reserved slots  ng user if ever mali nakuha niyang slots 
+  
+  B.  Reserve a slot
+    - Saving slots being overwritten in Dashboard when i click "add" and then "save" 
+      Example:
+      I saved seat 4 (730-8am) it shows at the dashboard, but when i save seat 1 (7-8am) nawawala yung SEAT 4 (730-8am)
+
+
+2. Calendar at Search button 
+3. Technician Side 
