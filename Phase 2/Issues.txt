@@ -11,5 +11,6 @@ Missing Requirements
       I saved seat 4 (730-8am) it shows at the dashboard, but when i save seat 1 (7-8am) nawawala yung SEAT 4 (730-8am)
 
 
-2. Calendar at Search button 
-3. Technician Side 
+2. Calendar 
+3. Search button 
+4. Technician Side 

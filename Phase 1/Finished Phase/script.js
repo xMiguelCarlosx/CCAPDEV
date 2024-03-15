@@ -182,7 +182,7 @@ function updateUserName() {
 
 
 
-//HOMEPAGE
+//--------------------------------------HOMEPAGE------------------------------------------------------
 function sidebar_toggle_animation() {
 
     const sidebar = document.querySelector('.sidebar');

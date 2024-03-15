@@ -414,7 +414,6 @@ function displayReservedSlots() {
 
 
 
-
 /*SETTINGS-------------------------- */
 function update_settings() {
     const isAnonymous = sessionStorage.getItem('isAnonymous') === 'true';
@@ -635,5 +634,4 @@ function initializeTechnicianBookingSystem() {
         alert("Student not found.");
     }
 }
-
 
