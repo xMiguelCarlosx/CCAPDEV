@@ -21,6 +21,7 @@ body {
     display: flex;
     justify-content: center;
     align-content: center;
+    background-size: cover;
     background-image: url('images/computer-lab.jpg');
 }
 
