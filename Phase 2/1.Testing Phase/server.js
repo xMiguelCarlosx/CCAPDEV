@@ -42,8 +42,8 @@ app.get('/3b-student-login-page.html', function (req, res) {
     res.sendFile(path.join(__dirname, '3b-student-login-page.html'));
 });
 
-app.get('/3b-technician-login-page.css', function (req, res) {
-    res.sendFile(path.join(__dirname, '3b-technician-login-page.css'));
+app.get('/3b-technician-login-page.html', function (req, res) {
+    res.sendFile(path.join(__dirname, '3b-technician-login-page.html'));
 });
 
 //4 PAGE----------------------------------------------------------
