@@ -287,24 +287,27 @@ function initializeBookingSystem() {
         });
     });
 
-    // Event listener for saving chosen slots
     document.getElementById('save').addEventListener('click', function () {
         const chosenSlots = Array.from(chosenSlotsList.querySelectorAll('li')).map(slot => slot.querySelector('span').innerText);
         const email = sessionStorage.getItem('loggedInUserEmail');
         const userDataArray = JSON.parse(sessionStorage.getItem('userData')) || [];
         const userIndex = userDataArray.findIndex(user => user.email === email);
-
+    
         if (userIndex !== -1) {
             // Get the selected date from the input field
             const selectedDate = dateInput.value;
-            
-            // Add the chosen slots and selected date to the user data
-            userDataArray[userIndex].chosenSlots = chosenSlots;
+    
+            // Merge the new chosen slots with existing ones
+            const existingChosenSlots = userDataArray[userIndex].chosenSlots || [];
+            const mergedSlots = [...new Set([...existingChosenSlots, ...chosenSlots])];
+    
+            // Update the chosen slots and selected date in the user data
+            userDataArray[userIndex].chosenSlots = mergedSlots;
             userDataArray[userIndex].date = selectedDate;
-            
+    
             // Save the updated user data array back to session storage
             sessionStorage.setItem('userData', JSON.stringify(userDataArray));
-            
+    
             alert('Chosen slots and date saved successfully.');
         }
     });

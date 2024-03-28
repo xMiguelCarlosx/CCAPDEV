@@ -23,7 +23,7 @@ body {
     flex-direction: row;
     height: 100vh;
     width: 100%;
-    background-image: url('images/computer-lab.jpg');
+    background-image: url('../6.IMG_folder/computer-lab.jpg');
     background-size: cover;
     border-radius: 10px;
     margin: 1px;
@@ -69,7 +69,7 @@ body {
 .dlsu {
     width: 30px;
     height: 30px;
-    background-image: url('images/dlsu.png');
+    background-image: url('../6.IMG_folder/dlsu.png');
     background-position: center;
     background-size: contain;
 }
@@ -125,10 +125,13 @@ body {
     height: 80px;
     width: 180px;
     border-radius: 70px;
-   }
+    transition: background-color 0.3s, color 0.3s;
+    /* Add transition for smooth effect */
+}
 
 .register-button:hover {
     background: gray;
+
     cursor: pointer;
 }
 
@@ -343,7 +346,7 @@ body {
 }
 
 .star-icon {
-    background: url('images/star-white.png') no-repeat;
+    background: url('../6.IMG_folder/star-white.png') no-repeat;
     background-position: center;
     background-size: contain;
 }
@@ -365,7 +368,7 @@ body {
 }
 
 .check-icon {
-    background: url('images/check-white.png') no-repeat;
+    background: url('../6.IMG_folder/check-white.png') no-repeat;
     background-position: center;
     background-size: contain;
 }

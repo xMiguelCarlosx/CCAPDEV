@@ -21,7 +21,7 @@ body {
     display: flex;
     justify-content: center;
     align-content: center;
-    background-image: url('images/computer-lab.jpg');
+    background-image: url('../6.IMG_folder/computer-lab.jpg');
     background-size: cover;
 }
 
@@ -71,7 +71,7 @@ body {
 }
 
 .lines-icon {
-    background: url('images/lines.png') no-repeat;
+    background: url('../6.IMG_folder/lines.png') no-repeat;
     background-position: center;
     background-size: contain;
 }

@@ -4,10 +4,10 @@
 <head>
     <title>Settings</title>
 
-    <link rel="stylesheet" href="4-home-page.css">
-    <link rel="stylesheet" href="4d-settings-page.css">
+    <link rel="stylesheet" href="../2.CSS_folder/4-home-page.css">
+    <link rel="stylesheet" href="../2.CSS_folder/4d-settings-page.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="script.js" deref></script>
+    <script src="../3.JS_folder/script.js" deref></script>
 </head>
 
 <body>
@@ -16,7 +16,7 @@
 
         <div class="user-image-container">
             <div class="user-picture">
-                <img src="images/dlsu.png" id="profile-pic">
+                <img src="../6.IMG_folder/dlsu.png" id="profile-pic">
                 <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file">
             </div>
         </div>
@@ -30,10 +30,10 @@
 
             <li class="list-item">
                 <a href="4-home-page.html">
-                    <i class='bx bx-home'></i>
-                    <span class="link-name" style="">Home</span>
+                  <i class='bx bx-home'></i>
+                  <span class="link-name" style="">Homepage</span>
                 </a>
-            </li>
+              </li>
 
             <li class="list-item active">
                 <a href="4a-dashboard.html">
@@ -42,7 +42,7 @@
                 </a>
             </li>
 
-            <li class="list-item">
+                       <li class="list-item">
                 <a href="4c-reserve.html">
                     <i class='bx bx-calendar'></i>
                     <span class="link-name" style="">Reserve a slot </span>
@@ -57,7 +57,7 @@
             </li>
 
             <li class="list-item">
-                <a href="1-welcome-page.html">
+                <a href="3a-login-option.html">
                     <i class='bx bx-log-out'></i>
                     <span class="link-name" style="">Logout</span>
                 </a>
@@ -79,7 +79,7 @@
 
                 <div class="update-image-container">
                     <div class="settings-picture">
-                        <img src="images/dlsu.png" id="profile-pic">
+                        <img src="../6.IMG_folder/dlsu.png" id="profile-pic">
                         <label for="input-file">Upload Image</label>
                         <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file">
                     </div>
@@ -164,8 +164,7 @@
         update_settings();
         sidebar_toggle_animation();
         update_profile_pic();
-        check_anonymous_status();
-        delete_account();
+        check_anonymous_status()
     </script>
 
 </body>
