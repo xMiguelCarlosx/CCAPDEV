@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Settings</title>
+
+    <link rel="stylesheet" href="4-home-page.css">
+    <link rel="stylesheet" href="5b-search.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="script.js" deref></script>
+
+</head>
+
+<body>
+
+    <nav class="sidebar">
+
+        <div class="logo-menu">
+            <h2 class="logo" id="user-name">Name of user </h2>
+            <i class='bx bx-menu toggle-btn'></i>
+        </div>
+
+        <ul class="list">
+
+            <li class="list-item">
+                <a href="4-home-page.html">
+                    <i class='bx bx-home'></i>
+                      <span class="link-name" style="">Home</span>
+                </a>
+            </li>
+
+            <li class="list-item">
+                <a href="5c-tech-dashboard.html">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="link-name">Dashboard</span>
+                </a>
+            </li>
+
+
+            <li class="list-item active">
+                <a href="5b-search.html">
+                    <i class='bx bx-calendar'></i>
+                    <span class="link-name" style="">Edit Student Slot </span>
+                </a>
+            </li>
+
+
+            <li class="list-item">
+                  <a href="1-welcome-page.html">
+                    <i class='bx bx-log-out'></i>
+                    <span class="link-name" style="">Logout</span>
+                </a>
+            </li>
+
+        </ul>
+
+
+    </nav>
+
+
+
+    <div class="navigation-title-container">
+        <div class="navigation-title">
+            Edit Student Slot
+        </div>
+    </div>
+
+    <div class="nav-main-container">
+        <div class="Form">
+
+            <form action="#" name="Formfill" onsubmit="return false;">
+                <div class="login-as-text">
+                    SEARCH
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="First Name" id="FirstName" name="FirstName" required>
+
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Last Name" id="LastName" name="LastName" required>
+
+                </div>
+                <p id="result"></p>
+                <input type="submit" value="Search" onclick="findStudent()">
+            </form>
+        </div>
+
+    </div>
+
+
+    <script>
+        initializeBookingSystem();
+        displayRegisteredStudents();
+        findStudent();
+    </script>
+
+    <script src="script.js"></script>
+    <script>
+        sidebar_toggle_animation();
+    </script>
+    <script>
+        updateUserName();
+    </script>
+
+</body>
+
+</html>
