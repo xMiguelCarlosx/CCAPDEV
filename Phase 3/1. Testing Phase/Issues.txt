@@ -1,0 +1,16 @@
+ISSUES FROM MCO2 
+
+1. chosen seats are missing the date component
+2. unclear what the search from reserve page is for
+3. reserve anonymously is done per booking, not a flag that is set from profile settings (same comment from phase 1)
+
+4. same comment from phase 1: seat reservation should have a start time and end time instead,
+ to allow for the reservation of multiple timeslots at once (address this for phase 3)
+
+5. web app initially not working. It appears that you have simply routed every page in your express app. 
+This is fine, but you have forgotten to include the script.js file as part of your static files--making the entire web application non-functional. 
+I had to make some revisions to your source code to make it functional again. Please test your webapps before submitting
+
+6. edit and delete reservations inaccessible / not functional
+7. lab technician should only be allowed to create / edit / delete reservatons for students, 
+   not give full access to their accounts
