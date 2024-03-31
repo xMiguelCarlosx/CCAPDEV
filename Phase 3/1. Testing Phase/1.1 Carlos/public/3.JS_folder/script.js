@@ -186,7 +186,7 @@ function updateUserName() {
 }
 
 
-
+//------------------------------------ WEBSITE ANIMATION -----------------------------------------
 //HOMEPAGE
 function sidebar_toggle_animation() {
 
