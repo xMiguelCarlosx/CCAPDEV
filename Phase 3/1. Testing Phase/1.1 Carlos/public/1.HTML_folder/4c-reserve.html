@@ -92,7 +92,9 @@
                 <div class="slot-availability-title">
                     Time Slots
                 </div>
+
                 <div class="available-slots">
+
                     <ul class="time-slots">
                         <a class="timeslot-button" href="#" id="slot-button">
                             <span> G304 0700 - 0730 </span>
@@ -105,6 +107,25 @@
                         </a>
                     </ul>
                 </div>
+
+                
+                <div class="slot-availability-title">
+                    Choose Time
+                </div>
+                <div class="available-slots">
+
+                    <form id="reservationForm">
+                        <label for="startTime">Start Time:</label>
+                        <input class="time-input"type="time" id="startTime" name="startTime" required>
+
+                        <label for="endTime">End Time:</label>
+                        <input class="time-input" type="time" id="endTime" name="endTime" required>
+                        <button class="chosen-time-button" type="submit">Reserve</button>
+                    </form>
+                    <div id="message"></div>
+                </div>
+
+
             </div>
 
 
@@ -153,12 +174,13 @@
 
     </div>
     </div>
-    
+
     <script>
         initializeBookingSystem();
         displayRegisteredStudents();
         sidebar_toggle_animation();
         updateUserName();
+        choosingTime();
     </script>
 
 

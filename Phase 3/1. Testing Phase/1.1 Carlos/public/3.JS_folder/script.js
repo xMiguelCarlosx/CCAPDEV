@@ -313,6 +313,32 @@ function initializeBookingSystem() {
     });
 }
 
+function choosingTime() {
+    const reservationForm = document.getElementById("reservationForm");
+    const messageDiv = document.getElementById("message");
+
+    reservationForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const startTime = reservationForm.elements["startTime"].value;
+        const endTime = reservationForm.elements["endTime"].value;
+
+        const reservationDetails = {
+            startTime: startTime,
+            endTime: endTime
+        };
+
+        // Here you can send the reservationDetails to your backend for processing
+        // For now, we'll just display the reservation details on the page
+        messageDiv.textContent = `Reservation successful! Start Time: ${startTime}, End Time: ${endTime}`;
+        reservationForm.reset();
+    });
+}
+
+
+
+
+
 //-----------------------------DASHBOARD------------------------------------------------
 function update_dashboard_status() {
     const isAnonymous = sessionStorage.getItem('isAnonymous') === 'true';

@@ -243,6 +243,94 @@ input[type = "search"]{
 
 
 
+/*------------Choosing Timeslot----------------*/
+
+
+
+form {
+  max-width: 400px;
+  color: #ffffff;
+
+
+  
+}
+
+label,select, input,button {
+  display: flex-end;
+  margin-bottom: 10px;
+  
+
+}
+
+.chosen-time-button {
+    color: white;
+    background-color: transparent;
+    border-style: none;
+    text-decoration: none;
+    padding: 3px;
+    margin: 1px;
+    font-family: "poppins";
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.chosen-time-button:hover {
+    color: white;
+    background-color: rgba(20, 34, 14, 0.473);
+    border-style: none;
+    text-decoration: none;
+    padding: 3px;
+    margin: 1px;
+    font-family: "poppins";
+       border-radius: 10px;
+}
+
+.time-input{
+ color: white;
+    background-color: transparent;
+     border-style: none;
+    text-decoration: none;
+    padding: 3px;
+    margin: 1px;
+     font-size: 20px;
+    font-family: "poppins";
+    border-radius: 10px;
+}
+
+.time-input:hover{
+  
+    background-color: rgba(20, 34, 14, 0.473);
+    border-radius: 1px;
+    border-style: none;
+    text-decoration: none;
+    padding: 3px;
+    margin: 1px;
+    font-family: "poppins";
+    border-radius: 10px;
+}
+
+
+
+#message {
+  margin-top: 20px;
+  padding: 10px;
+  
+  background-color: (0, 0%, 98%);
+}
+
+#message:hover {
+      color: white;
+    background-color: rgba(20, 34, 14, 0.473);
+    border-radius: 1px;
+    border-style: none;
+    text-decoration: none;
+    padding: 3px;
+    margin: 1px;
+    font-family: "poppins";
+    
+}
+
+
 
 /*--------*/
 
