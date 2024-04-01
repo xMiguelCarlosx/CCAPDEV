@@ -215,7 +215,7 @@ function toggle_button_animation() {
 //-----------------------------RESERVE------------------------------------------------
 
 function initializeBookingSystem() {
-    const timeSlotButtons = document.querySelectorAll('.timeslot-button');
+    const roomSlotButtons = document.querySelectorAll('.roomslot-button');
     const availableSeatsList = document.getElementById('availableSeats');
     const chosenSlotsList = document.querySelector('.slots-box ul');
     const dateInput = document.querySelector('.date input[type="date"]');
@@ -231,11 +231,11 @@ function initializeBookingSystem() {
 
     // Function to update available seats list
 
-    timeSlotButtons.forEach(button => {
+    roomSlotButtons.forEach(button => {
         button.addEventListener('click', function () {
             availableSeatsList.innerHTML = '';
 
-            timeSlotButtons.forEach(btn => btn.classList.remove('clicked'));
+            roomSlotButtons.forEach(btn => btn.classList.remove('clicked'));
 
             button.classList.add('clicked');
             selectedTimeSlot = button.querySelector('span').innerText;
@@ -683,14 +683,14 @@ function initializeTechnicianBookingSystem() {
         });        
 
         const availableSeatsList = document.getElementById('availableSeats');
-        const timeSlotButtons = document.querySelectorAll('.timeslot-button');
+        const roomSlotButtons = document.querySelectorAll('.timeslot-button');
         let selectedTimeSlot = null;
 
-        timeSlotButtons.forEach(button => {
+        roomSlotButtons.forEach(button => {
             button.addEventListener('click', function () {
                 availableSeatsList.innerHTML = '';
 
-                timeSlotButtons.forEach(btn => btn.classList.remove('clicked'));
+                roomSlotButtons.forEach(btn => btn.classList.remove('clicked'));
 
                 button.classList.add('clicked');
                 selectedTimeSlot = button.querySelector('span').innerText;

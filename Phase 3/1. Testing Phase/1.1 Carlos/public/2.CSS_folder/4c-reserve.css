@@ -200,7 +200,7 @@ input[type = "search"]{
     border-radius: 10px;
 }
 
-.time-slots {
+.room-slots {
     display: flex;
     flex-direction: column;
     list-style-type: none;
@@ -209,16 +209,16 @@ input[type = "search"]{
     margin-top: 2px;
 }
 
-.time-slots li {
+.room-slots li {
     margin-bottom: 10px;
 }
 
-.time-slots li input[type="checkbox"] {
+.room-slots li input[type="checkbox"] {
     margin-right: 10px;
     
 }
 
-.timeslot-button {
+.roomslot-button {
     color: white;
     background-color: transparent;
     border-radius: 1px;   
@@ -229,7 +229,7 @@ input[type = "search"]{
     font-family: "poppins";
 }
 
-.timeslot-button:hover {
+.roomslot-button:hover {
     color: white;
     background-color: rgba(20, 34, 14, 0.473);
     border-radius: 1px;
