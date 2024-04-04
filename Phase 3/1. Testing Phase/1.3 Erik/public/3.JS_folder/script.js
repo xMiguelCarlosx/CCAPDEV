@@ -420,15 +420,15 @@ function displayAllUsers(users) {
     users.forEach(function(user) {
         var slots = user.chosenSlots || [];
         var seats = user.chosenSeats || [];
-        var date = user.date; // Assuming "choosenDate" is correctly set
+        var date = user.date; // Assuming "date" is correctly set
 
         // Iterate over the slots to create an entry for each
         slots.forEach((slot, index) => {
             var listItem = document.createElement('li');
-            var seat = seats[index] || date; // Handles missing seat info
+            var seat = seats[index] ? `- Seat: ${seats[index]}` : ''; // Properly handle missing seat info
 
-            // Format the text as "name, seat, date, time"
-            listItem.textContent = `${user.firstName} ${user.lastName}, ${seat}, ${date}, ${slot}`;
+            // Format the text as "FirstName LastName - Slot - Seat (if available) - Date"
+            listItem.textContent = `${user.firstName} ${user.lastName} - ${slot} ${seat} - (${date})`;
             studentList.appendChild(listItem);
         });
     });
