@@ -500,8 +500,9 @@ function displayUserChosenSlots() {
         if (user.chosenSlots.length > 0) {
             user.chosenSlots.forEach((slot, index) => {
                 const slotItem = document.createElement('li');
+                // Now include the date of the reservation in the display
                 slotItem.innerHTML = `
-                    ${slot}
+                    ${slot} - (${user.date})
                     <button class="delete-slot-btn" onclick="deleteSlot('${user.email}', ${index})">Delete</button>`;
                 userChosenSlotsContainer.appendChild(slotItem);
             });
@@ -540,18 +541,17 @@ function displayReservedSlots() {
 
     // Iterate through user data array and create list items for each reserved slot
     userDataArray.forEach(function(user) {
-        // Find the user's chosen date
-        var chosenDate = user.date;
+        user.chosenSlots.forEach(function(slot, index) {
+            // Ensure the date is attached to each slot
+            var chosenDate = user.date; // This assumes each user object has a 'date' property
 
-        user.chosenSlots.forEach(function(slot) {
-            // Create list item with both date and slot information
+            // Create a list item with both slot and date information
             var listItem = document.createElement('li');
             listItem.textContent = user.firstName + ' ' + user.lastName + ': ' + slot + ' on ' + chosenDate;
             reservedSlotsContainer.appendChild(listItem);
         });
     });
 }
-
 
 
 
@@ -776,5 +776,3 @@ function initializeTechnicianBookingSystem() {
     }
 
 }
-
-
