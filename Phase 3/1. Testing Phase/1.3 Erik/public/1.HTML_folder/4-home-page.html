@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Student Profile</title>
+  <link rel="stylesheet" href="../2.CSS_folder/4-home-page.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script src="../3.JS_folder/script.js" deref></script>
+
+</head>
+
+<body>
+  <nav class="sidebar">
+
+    <div class="user-image-container">
+      <div class="user-picture">
+        <img src="../6.IMG_folder/dlsu.png" id="profile-pic">
+        <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file">
+      </div>
+    </div>
+
+    <div class="logo-menu">
+      <h2 class="logo" id="user-name">Name of user </h2>
+      <i class='bx bx-menu toggle-btn'></i>
+    </div>
+
+    <ul class="list">
+
+      <li class="list-item">
+        <a href="4-home-page.html">
+          <i class='bx bx-home'></i>
+          <span class="link-name" style="">Homepage</span>
+        </a>
+      </li>
+
+      <li class="list-item">
+        <a href="4a-dashboard.html">
+          <i class='bx bx-grid-alt'></i>
+          <span class="link-name" style="">Dashboard</span>
+        </a>
+      </li>
+
+      <li class="list-item">
+        <a href="4c-reserve.html">
+          <i class='bx bx-calendar'></i>
+          <span class="link-name" style="">Reserve a slot </span>
+        </a>
+      </li>
+
+      <li class="list-item">
+        <a href="4d-settings-page.html">
+          <i class='bx bx-cog'></i>
+          <span class="link-name" style="">Settings</span>
+        </a>
+      </li>
+
+      <li class="list-item">
+        <a href="3a-login-option.html">
+          <i class='bx bx-log-out'></i>
+          <span class="link-name" style="">Logout</span>
+        </a>
+      </li>
+
+    </ul>
+
+
+  </nav>
+
+
+
+
+  <script>
+    displayUserChosenSlots();
+    displayAvailableSlots();
+    displayReservedSlots();
+    displayReservedSlots();
+    sidebar_toggle_animation();
+    updateUserName();
+  </script>
+
+</body>
+
+</html>
