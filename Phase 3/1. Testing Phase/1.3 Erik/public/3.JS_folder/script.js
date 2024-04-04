@@ -371,7 +371,6 @@ function update_dashboard_status() {
     }
 }
 
-
 function displayRegisteredStudents() {
     var userDataArray = JSON.parse(sessionStorage.getItem('userData')) || [];
     var studentList = document.getElementById('studentList');
@@ -499,30 +498,34 @@ function displayUserChosenSlots() {
 
         // Check if the user has chosen any slots
         if (user.chosenSlots.length > 0) {
-            // Iterate over the chosen slots and create list items
             user.chosenSlots.forEach((slot, index) => {
-                // Find the user's chosen date
-                var chosenDate = user.date || 'Date not specified';
-
-                // Create list item with both date and slot information, including a checkbox
                 const slotItem = document.createElement('li');
                 slotItem.innerHTML = `
-                    <input type="checkbox" id="slot-${index}" name="slot-${index}" value="${slot}">
-                    <label for="slot-${index}">${slot} on ${chosenDate}</label>`;
+                    ${slot}
+                    <button class="delete-slot-btn" onclick="deleteSlot('${user.email}', ${index})">Delete</button>`;
                 userChosenSlotsContainer.appendChild(slotItem);
             });
         } else {
-            // display a message if the user hasn't chosen any slots
             const noSlotsMessage = document.createElement('p');
             noSlotsMessage.textContent = 'No slots chosen by this user.';
             userChosenSlotsContainer.appendChild(noSlotsMessage);
         }
     } else {
-        // Display a message if the user is not found
         userChosenSlotsContainer.textContent = 'User not found.';
     }
 }
 
+function deleteSlot(userEmail, slotIndex) {
+    const userDataArray = JSON.parse(sessionStorage.getItem('userData')) || [];
+    const userIndex = userDataArray.findIndex(user => user.email === userEmail);
+
+    if (userIndex !== -1) {
+        userDataArray[userIndex].chosenSlots.splice(slotIndex, 1); // Remove the slot at the specified index
+        sessionStorage.setItem('userData', JSON.stringify(userDataArray)); // Save the updated array back to sessionStorage
+        displayUserChosenSlots(); // Refresh the list of chosen slots
+        displayReservedSlots(); // Refresh the list of chosen slots
+    }
+}
 
 
 function displayReservedSlots() {
