@@ -293,3 +293,13 @@
     font-size: 20px;
 
 }
+
+.delete-slot-btn {
+    margin-left: 10px;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
