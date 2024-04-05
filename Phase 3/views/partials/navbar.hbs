@@ -1,0 +1,69 @@
+<title>Student Profile</title>
+<link rel="stylesheet" href="/static/css/4-home-page.css">
+<script src="/static/js/script.js" defer></script>
+<script src="/static/js/student.js" defer></script>
+
+<nav class="sidebar">
+
+    <div class="user-image-container">
+        <div class="user-picture">
+            <img src="/static/img/dlsu.png" id="profile-pic">
+            <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file">
+        </div>
+    </div>
+
+    <div class="logo-menu">
+         <h2 class="logo" id="user-name">{{user.Name}}</h2>
+        <i class='bx bx-menu toggle-btn'></i>
+    </div>
+
+    <ul class="list">
+
+        <li class="list-item">
+            <a href="/homepage"> <!-- Updated the href to point to the correct route -->
+                <i class='bx bx-home'></i>
+                <span class="link-name" style="">Homepage</span>
+            </a>
+        </li>
+
+        <li class="list-item">
+            <a href="/dashboard"> <!-- Updated the href to point to the correct route -->
+                <i class='bx bx-grid-alt'></i>
+                <span class="link-name" style="">Dashboard</span>
+            </a>
+        </li>
+
+        <li class="list-item">
+            <a href="/reserve"> <!-- Updated the href to point to the correct route -->
+                <i class='bx bx-calendar'></i>
+                <span class="link-name" style="">Reserve a slot </span>
+            </a>
+        </li>
+
+        <li class="list-item">
+            <a href="/settings"> <!-- Updated the href to point to the correct route -->
+                <i class='bx bx-cog'></i>
+                <span class="link-name" style="">Settings</span>
+            </a>
+        </li>
+
+        <li class="list-item">
+            <a href="/logout"> <!-- Updated the href to point to the correct route -->
+                <i class='bx bx-log-out'></i>
+                <span class="link-name" style="">Logout</span>
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+<script src="/static/js/script.js" defer></script>
+<script src="/static/js/student.js" defer></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', async () => {
+        sidebar_toggle_animation();
+        updateUserName(); // Call the updateUserName function
+    });
+</script>
