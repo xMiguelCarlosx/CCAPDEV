@@ -1,0 +1,111 @@
+<link rel="stylesheet" href="/static/css/4-home-page.css">
+<link rel="stylesheet" href="/static/css/4c-reserve.css">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<script src="/static/js/script.js" defer></script>
+<script src="/static/js/booking.js" defer></script>
+
+{{> navbar}}
+
+<div class="navigation-title-container">
+    <div class="navigation-title">
+        Reserve a Slot
+    </div>
+
+
+    <div class="nav-main-container">
+        <div class="rightside-div-1"></div>
+        <div class="rightside-div-2">
+            <div class="rightside-div-2-1">
+                <div class="slot-availability-title">
+                    Room Slots
+                </div>
+                <div class="available-slots">
+                    <select id="roomSlots" class="room-slots">
+                        <option class="roomslot-button" value="G301">G301</option>
+                        <option class="roomslot-button" value="G302">G302</option>
+                        <option class="roomslot-button" value="G303">G303</option>
+                    </select>
+                </div>
+                <div class="slot-availability-title">
+                    Choose Time
+                </div>
+                <div class="available-slots">
+                    <form id="reservationForm">
+                        <label for="selectedDate">Select Date:</label>
+                        <input type="date" id="selectedDate" name="selectedDate" required>
+                        <label for="startTime">Start Time:</label>
+                        <input class="time-input" type="time" id="startTime" name="startTime" required>
+                        <label for="endTime">End Time:</label>
+                        <input class="time-input" type="time" id="endTime" name="endTime" required>
+                    </form>
+                </div>
+            </div>
+            <div class="rightside-div-2-2">
+                <div class="seat-availability-title">
+                    Available Seats
+                </div>
+                <div class="available-seats">
+                    <ul id="availableSeats" class="seats">
+                        <li>
+                            <input type="checkbox" value="1">
+                            Seat 1
+                        </li>
+                        <li>
+                            <input type="checkbox" value="2">
+                            Seat 2
+                        </li>
+                        <li>
+                            <input type="checkbox" value="3">
+                            Seat 3
+                        </li>
+                        <li>
+                            <input type="checkbox" value="4">
+                            Seat 4
+                        </li>
+                        <li>
+                            <input type="checkbox" value="5">
+                            Seat 5
+                        </li>
+                        <li>
+                            <input type="checkbox" value="6">
+                            Seat 6
+                        </li>
+                        <li>
+                            <input type="checkbox" value="7">
+                            Seat 7
+                        </li>
+                        <li>
+                            <input type="checkbox" value="8">
+                            Seat 8
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rightside-div-2-3">
+                <div class="list-of-slots-title">
+                    List of Chosen Slots
+                    <div class="slots-box">
+                        <ul class="seats">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modify-button-container">
+            <div class="edit-button" id="add">
+                <i class='bx bx-cart-add'></i>
+                <span>Add</span>
+            </div>
+            <div class="edit-button" id="delete">
+                <i class='bx bx-trash'></i>
+                <span>Delete</span>
+            </div>
+            <div class="edit-button" id="save">
+                <i class='bx bx-save'></i>
+                <span>Save</span>
+            </div>
+        </div>
+    </div>
+
+
+</div>

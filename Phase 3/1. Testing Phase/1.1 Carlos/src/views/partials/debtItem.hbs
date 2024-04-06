@@ -1,9 +1,13 @@
 <div class="debtItemContainer">
+    <!-- Container for each debt item -->
     <div class="debtInfo">
-        <!-- Uses the toLocale helper defined in [root]/index.js -->
+        <!-- Container for debt information -->
+        <!-- Uses the toLocale helper defined in [root]/index.js to format the date -->
         <span class="dateLabel"> Last Updated: {{toLocale lastUpdated}} </span>
+        <!-- Displays the account name -->
         <span class="nameLabel"> {{accountName}} </span> 
     </div>
+    <!-- Displays the debt amount -->
     <span class="debtAmount">
         ₱{{debtAmount}} 
     </span>

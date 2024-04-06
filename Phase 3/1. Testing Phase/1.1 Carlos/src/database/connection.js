@@ -1,27 +1,30 @@
-import { MongoClient } from "mongodb";
+const mongoose = require('mongoose');
 
-const mongoURI = process.env.MONGODB_URI;
-const client = new MongoClient(mongoURI);
+const MONGO_URI = process.env.MONGO_URI;
+const DBNAME = process.env.DB_NAME;
 
-/**
- * Connects the MongoClient to the MongoDB service specified by MONGODB_URI
- * @returns A Promise which resolves to the client object
- */
-export function connectToMongo() {
-    return client.connect();
-};
-
-export function getDb(dbName = process.env.DB_NAME) {
-    return client.db(dbName);
-};
-
-// These are just used for closing the connection properly
-function signalHandler() {
-    console.log("Closing MongoDB connection...");
-    process.exit();
-    client.close();
+function connectToDB (dbName = DBNAME) {
+    return mongoose.connect(MONGO_URI, {dbName: dbName});
 }
 
-process.on("SIGINT", signalHandler);
-process.on("SIGTERM", signalHandler);
-process.on("SIGQUIT", signalHandler);
+function disconnect(){
+    console.log('Disconnecting from Mongodb...');
+    mongoose.disconnect();
+}
+
+function signalHandler() {
+    disconnect();
+    process.exit();
+}
+
+process.on('SIGINT', signalHandler);
+process.on('SIGQUIT', signalHandler);
+process.on('SIGTERM', signalHandler);
+process.on('SIGKILL', signalHandler);
+
+process.on('SIG', signalHandler);
+
+module.exports = {
+    connect: connectToDB,
+    disconnect: disconnect
+};
