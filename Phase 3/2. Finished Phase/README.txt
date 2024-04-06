@@ -9,4 +9,6 @@
 Connected to MongoDB.
 Express app now listening...
 
+3. To run the website type localhost:3000 on the website
+
      
